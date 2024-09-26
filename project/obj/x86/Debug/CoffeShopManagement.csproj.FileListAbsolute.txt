@@ -1,0 +1,3 @@
+C:\Users\user\Google Drive\HK 2 năm 2\Lập trình Ứng Dụng\DoAn\project\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\user\Google Drive\HK 2 năm 2\Lập trình Ứng Dụng\DoAn\project\obj\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\user\Google Drive\HK 2 năm 2\Lập trình Ứng Dụng\DoAn\project\obj\x86\Debug\CoffeShopManagement.csproj.ResolveComReference.cache
