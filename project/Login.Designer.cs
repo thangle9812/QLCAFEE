@@ -37,11 +37,14 @@
             this.rdbAdmin = new System.Windows.Forms.RadioButton();
             this.rdbCashier = new System.Windows.Forms.RadioButton();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTaiKhoan
             // 
             resources.ApplyResources(this.lblTaiKhoan, "lblTaiKhoan");
+            this.lblTaiKhoan.BackColor = System.Drawing.Color.Transparent;
+            this.lblTaiKhoan.ForeColor = System.Drawing.Color.Cyan;
             this.lblTaiKhoan.Name = "lblTaiKhoan";
             // 
             // txtUsername
@@ -59,6 +62,8 @@
             // lblMatKhau
             // 
             resources.ApplyResources(this.lblMatKhau, "lblMatKhau");
+            this.lblMatKhau.BackColor = System.Drawing.Color.Transparent;
+            this.lblMatKhau.ForeColor = System.Drawing.Color.Cyan;
             this.lblMatKhau.Name = "lblMatKhau";
             // 
             // btnLogin
@@ -74,27 +79,38 @@
             // rdbAdmin
             // 
             resources.ApplyResources(this.rdbAdmin, "rdbAdmin");
-            this.rdbAdmin.BackColor = System.Drawing.Color.Silver;
+            this.rdbAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.rdbAdmin.ForeColor = System.Drawing.Color.Cyan;
             this.rdbAdmin.Name = "rdbAdmin";
             this.rdbAdmin.UseVisualStyleBackColor = false;
             // 
             // rdbCashier
             // 
             resources.ApplyResources(this.rdbCashier, "rdbCashier");
-            this.rdbCashier.BackColor = System.Drawing.Color.Silver;
+            this.rdbCashier.BackColor = System.Drawing.Color.Transparent;
             this.rdbCashier.Checked = true;
+            this.rdbCashier.ForeColor = System.Drawing.Color.Cyan;
             this.rdbCashier.Name = "rdbCashier";
             this.rdbCashier.TabStop = true;
             this.rdbCashier.UseVisualStyleBackColor = false;
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.White;
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             resources.ApplyResources(this.btnThoat, "btnThoat");
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.FlatAppearance.BorderSize = 0;
+            this.btnThoat.ForeColor = System.Drawing.Color.Black;
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.Cyan;
+            this.label1.Name = "label1";
             // 
             // frmLogin
             // 
@@ -102,6 +118,8 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.BackgroundImage = global::project.Properties.Resources.bg;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.rdbAdmin);
@@ -129,5 +147,6 @@
         private System.Windows.Forms.RadioButton rdbAdmin;
         private System.Windows.Forms.RadioButton rdbCashier;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Label label1;
     }
 }

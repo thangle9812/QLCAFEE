@@ -51,6 +51,9 @@
             this.tmiTable = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
             this.tmiAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmi_NhanVien = new System.Windows.Forms.ToolStripMenuItem();
+            this.danhSáchNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmi_Report = new System.Windows.Forms.ToolStripMenuItem();
             this.gpbTable = new System.Windows.Forms.GroupBox();
             this.pnlTable = new System.Windows.Forms.Panel();
             this.gpbBill = new System.Windows.Forms.GroupBox();
@@ -63,16 +66,7 @@
             this.pnlBill = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.gpbCategory = new System.Windows.Forms.GroupBox();
-            this.pnlCategory = new System.Windows.Forms.Panel();
-            this.gpbFood = new System.Windows.Forms.GroupBox();
-            this.txtPriceFood = new System.Windows.Forms.Label();
-            this.txtNameFood = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnlFood = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnPay = new System.Windows.Forms.Button();
             this.btnBlock = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
@@ -87,11 +81,6 @@
             this.btnAddFood = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtNameMan = new System.Windows.Forms.Label();
-            this.txtAdress = new System.Windows.Forms.Label();
-            this.datetime = new System.Windows.Forms.DateTimePicker();
             this.cmnSubTable = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmThemMon = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmTraMon = new System.Windows.Forms.ToolStripMenuItem();
@@ -105,21 +94,34 @@
             this.cmnSubTable3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmMoBan = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdMedia = new System.Windows.Forms.OpenFileDialog();
-            this.aCCOUNTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.aCCOUNTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pnlFood = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNameFood = new System.Windows.Forms.Label();
+            this.txtPriceFood = new System.Windows.Forms.Label();
+            this.gpbFood = new System.Windows.Forms.GroupBox();
+            this.pnlCategory = new System.Windows.Forms.Panel();
+            this.gpbCategory = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtNameMan = new System.Windows.Forms.Label();
+            this.txtAdress = new System.Windows.Forms.Label();
+            this.datetime = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.gpbTable.SuspendLayout();
             this.gpbBill.SuspendLayout();
-            this.gpbCategory.SuspendLayout();
-            this.gpbFood.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.cmnSubTable.SuspendLayout();
             this.cmnSubTable2.SuspendLayout();
             this.cmnSubTable3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aCCOUNTBindingSource)).BeginInit();
+            this.gpbFood.SuspendLayout();
+            this.gpbCategory.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -128,7 +130,9 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tmiAcount,
-            this.tmiAdmin});
+            this.tmiAdmin,
+            this.tmi_NhanVien,
+            this.tmi_Report});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -240,8 +244,8 @@
             this.toolStripSeparator12,
             this.tmiAccount});
             this.tmiAdmin.Name = "tmiAdmin";
-            this.tmiAdmin.Size = new System.Drawing.Size(76, 24);
-            this.tmiAdmin.Text = "Quản trị";
+            this.tmiAdmin.Size = new System.Drawing.Size(67, 24);
+            this.tmiAdmin.Text = "Coffee";
             this.tmiAdmin.Visible = false;
             // 
             // tmiCategory
@@ -291,18 +295,42 @@
             this.tmiAccount.Text = "Danh sách tài khoản";
             this.tmiAccount.Click += new System.EventHandler(this.tmiAccount_Click);
             // 
+            // tmi_NhanVien
+            // 
+            this.tmi_NhanVien.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.danhSáchNhânViênToolStripMenuItem});
+            this.tmi_NhanVien.Name = "tmi_NhanVien";
+            this.tmi_NhanVien.Size = new System.Drawing.Size(91, 24);
+            this.tmi_NhanVien.Text = "Nhân Viên";
+            this.tmi_NhanVien.Visible = false;
+            // 
+            // danhSáchNhânViênToolStripMenuItem
+            // 
+            this.danhSáchNhânViênToolStripMenuItem.Name = "danhSáchNhânViênToolStripMenuItem";
+            this.danhSáchNhânViênToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.danhSáchNhânViênToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
+            this.danhSáchNhânViênToolStripMenuItem.Text = "Danh Sách Nhân Viên";
+            this.danhSáchNhânViênToolStripMenuItem.Click += new System.EventHandler(this.danhSáchNhânViênToolStripMenuItem_Click);
+            // 
+            // tmi_Report
+            // 
+            this.tmi_Report.Name = "tmi_Report";
+            this.tmi_Report.Size = new System.Drawing.Size(68, 24);
+            this.tmi_Report.Text = "Report";
+            this.tmi_Report.Visible = false;
+            // 
             // gpbTable
             // 
             this.gpbTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gpbTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gpbTable.BackColor = System.Drawing.Color.Transparent;
             this.gpbTable.Controls.Add(this.pnlTable);
             this.gpbTable.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbTable.ForeColor = System.Drawing.Color.Black;
-            this.gpbTable.Location = new System.Drawing.Point(12, 249);
+            this.gpbTable.Location = new System.Drawing.Point(12, 31);
             this.gpbTable.Name = "gpbTable";
-            this.gpbTable.Size = new System.Drawing.Size(392, 337);
+            this.gpbTable.Size = new System.Drawing.Size(392, 555);
             this.gpbTable.TabIndex = 1;
             this.gpbTable.TabStop = false;
             this.gpbTable.Text = "Danh sách bàn";
@@ -318,7 +346,7 @@
             this.pnlTable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTable.Location = new System.Drawing.Point(7, 28);
             this.pnlTable.Name = "pnlTable";
-            this.pnlTable.Size = new System.Drawing.Size(372, 303);
+            this.pnlTable.Size = new System.Drawing.Size(372, 521);
             this.pnlTable.TabIndex = 0;
             this.pnlTable.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTable_Paint);
             // 
@@ -326,7 +354,7 @@
             // 
             this.gpbBill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gpbBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gpbBill.BackColor = System.Drawing.Color.Transparent;
             this.gpbBill.Controls.Add(this.txtTotal);
             this.gpbBill.Controls.Add(this.txtSTT);
             this.gpbBill.Controls.Add(this.txtNameTable);
@@ -336,7 +364,7 @@
             this.gpbBill.Controls.Add(this.pnlBill);
             this.gpbBill.Controls.Add(this.label2);
             this.gpbBill.Controls.Add(this.label1);
-            this.gpbBill.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpbBill.ForeColor = System.Drawing.Color.Black;
             this.gpbBill.Location = new System.Drawing.Point(410, 249);
             this.gpbBill.Name = "gpbBill";
@@ -391,17 +419,17 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(314, 301);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 21);
+            this.label6.Size = new System.Drawing.Size(47, 20);
             this.label6.TabIndex = 14;
             this.label6.Text = "VNĐ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(34, 60);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(273, 21);
+            this.label5.Size = new System.Drawing.Size(272, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "STT             Món            Số lượng";
             // 
@@ -431,105 +459,15 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(11, 298);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 21);
+            this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tổng cộng:";
-            // 
-            // gpbCategory
-            // 
-            this.gpbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gpbCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gpbCategory.Controls.Add(this.pnlCategory);
-            this.gpbCategory.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbCategory.ForeColor = System.Drawing.Color.Black;
-            this.gpbCategory.Location = new System.Drawing.Point(786, 249);
-            this.gpbCategory.Name = "gpbCategory";
-            this.gpbCategory.Size = new System.Drawing.Size(401, 121);
-            this.gpbCategory.TabIndex = 3;
-            this.gpbCategory.TabStop = false;
-            this.gpbCategory.Text = "Danh mục";
-            // 
-            // pnlCategory
-            // 
-            this.pnlCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlCategory.AutoScroll = true;
-            this.pnlCategory.Location = new System.Drawing.Point(7, 28);
-            this.pnlCategory.Name = "pnlCategory";
-            this.pnlCategory.Size = new System.Drawing.Size(388, 87);
-            this.pnlCategory.TabIndex = 0;
-            // 
-            // gpbFood
-            // 
-            this.gpbFood.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gpbFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.gpbFood.Controls.Add(this.txtPriceFood);
-            this.gpbFood.Controls.Add(this.txtNameFood);
-            this.gpbFood.Controls.Add(this.label4);
-            this.gpbFood.Controls.Add(this.label3);
-            this.gpbFood.Controls.Add(this.pnlFood);
-            this.gpbFood.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbFood.ForeColor = System.Drawing.Color.Black;
-            this.gpbFood.Location = new System.Drawing.Point(786, 376);
-            this.gpbFood.Name = "gpbFood";
-            this.gpbFood.Size = new System.Drawing.Size(401, 210);
-            this.gpbFood.TabIndex = 4;
-            this.gpbFood.TabStop = false;
-            this.gpbFood.Text = "Danh sách món";
-            // 
-            // txtPriceFood
-            // 
-            this.txtPriceFood.Location = new System.Drawing.Point(115, 54);
-            this.txtPriceFood.Name = "txtPriceFood";
-            this.txtPriceFood.Size = new System.Drawing.Size(221, 24);
-            this.txtPriceFood.TabIndex = 16;
-            // 
-            // txtNameFood
-            // 
-            this.txtNameFood.Location = new System.Drawing.Point(7, 30);
-            this.txtNameFood.Name = "txtNameFood";
-            this.txtNameFood.Size = new System.Drawing.Size(388, 24);
-            this.txtNameFood.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(20, 54);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 21);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Đơn giá:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(342, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 21);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "VNĐ";
-            // 
-            // pnlFood
-            // 
-            this.pnlFood.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlFood.AutoScroll = true;
-            this.pnlFood.Location = new System.Drawing.Point(7, 81);
-            this.pnlFood.Name = "pnlFood";
-            this.pnlFood.Size = new System.Drawing.Size(388, 123);
-            this.pnlFood.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.BackColor = System.Drawing.Color.Silver;
-            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.btnPay);
             this.groupBox1.Controls.Add(this.btnBlock);
             this.groupBox1.Controls.Add(this.lblName);
@@ -542,29 +480,22 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnAddFood);
-            this.groupBox1.Location = new System.Drawing.Point(397, 31);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(410, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(790, 196);
+            this.groupBox1.Size = new System.Drawing.Size(771, 196);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(6, 25);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(431, 165);
-            this.pictureBox2.TabIndex = 46;
-            this.pictureBox2.TabStop = false;
             // 
             // btnPay
             // 
             this.btnPay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnPay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPay.BackgroundImage")));
+            this.btnPay.BackgroundImage = global::project.Properties.Resources.nillicon;
             this.btnPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnPay.Location = new System.Drawing.Point(685, 46);
+            this.btnPay.Location = new System.Drawing.Point(532, 89);
             this.btnPay.Margin = new System.Windows.Forms.Padding(5);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(54, 49);
@@ -578,9 +509,9 @@
             this.btnBlock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBlock.BackColor = System.Drawing.Color.White;
-            this.btnBlock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBlock.BackgroundImage")));
+            this.btnBlock.BackgroundImage = global::project.Properties.Resources.employeeicon;
             this.btnBlock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBlock.Location = new System.Drawing.Point(685, 132);
+            this.btnBlock.Location = new System.Drawing.Point(658, 89);
             this.btnBlock.Margin = new System.Windows.Forms.Padding(5);
             this.btnBlock.Name = "btnBlock";
             this.btnBlock.Size = new System.Drawing.Size(54, 50);
@@ -592,9 +523,9 @@
             // 
             this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.Black;
-            this.lblName.Location = new System.Drawing.Point(653, 106);
+            this.lblName.Location = new System.Drawing.Point(615, 65);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(125, 27);
             this.lblName.TabIndex = 43;
@@ -606,9 +537,9 @@
             this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnReturn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReturn.BackgroundImage")));
+            this.btnReturn.BackgroundImage = global::project.Properties.Resources.reporticon;
             this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReturn.Location = new System.Drawing.Point(560, 46);
+            this.btnReturn.Location = new System.Drawing.Point(162, 89);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(5);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(55, 49);
@@ -620,9 +551,9 @@
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(544, 108);
+            this.label11.Location = new System.Drawing.Point(394, 65);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 22);
             this.label11.TabIndex = 41;
@@ -634,10 +565,10 @@
             this.btnReplaceTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnReplaceTable.BackColor = System.Drawing.Color.White;
-            this.btnReplaceTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReplaceTable.BackgroundImage")));
+            this.btnReplaceTable.BackgroundImage = global::project.Properties.Resources.table;
             this.btnReplaceTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnReplaceTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnReplaceTable.Location = new System.Drawing.Point(445, 132);
+            this.btnReplaceTable.Location = new System.Drawing.Point(284, 89);
             this.btnReplaceTable.Margin = new System.Windows.Forms.Padding(5);
             this.btnReplaceTable.Name = "btnReplaceTable";
             this.btnReplaceTable.Size = new System.Drawing.Size(54, 50);
@@ -650,9 +581,9 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(421, 111);
+            this.label10.Location = new System.Drawing.Point(260, 68);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(117, 16);
             this.label10.TabIndex = 40;
@@ -663,9 +594,9 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(650, 25);
+            this.label9.Location = new System.Drawing.Point(497, 68);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(122, 16);
             this.label9.TabIndex = 39;
@@ -679,7 +610,7 @@
             this.btnPlusTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnPlusTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPlusTable.BackgroundImage")));
             this.btnPlusTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPlusTable.Location = new System.Drawing.Point(560, 130);
+            this.btnPlusTable.Location = new System.Drawing.Point(411, 89);
             this.btnPlusTable.Margin = new System.Windows.Forms.Padding(5);
             this.btnPlusTable.Name = "btnPlusTable";
             this.btnPlusTable.Size = new System.Drawing.Size(55, 50);
@@ -691,9 +622,9 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(537, 25);
+            this.label8.Location = new System.Drawing.Point(139, 68);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 16);
             this.label8.TabIndex = 38;
@@ -704,13 +635,13 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(423, 25);
+            this.label7.Location = new System.Drawing.Point(25, 68);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 16);
             this.label7.TabIndex = 37;
-            this.label7.Text = "Thêm món";
+            this.label7.Text = "Đặt bàn";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAddFood
@@ -718,9 +649,9 @@
             this.btnAddFood.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAddFood.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddFood.BackgroundImage")));
+            this.btnAddFood.BackgroundImage = global::project.Properties.Resources.addcf;
             this.btnAddFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddFood.Location = new System.Drawing.Point(445, 45);
+            this.btnAddFood.Location = new System.Drawing.Point(47, 88);
             this.btnAddFood.Margin = new System.Windows.Forms.Padding(5);
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(54, 50);
@@ -735,69 +666,6 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Silver;
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.txtNameMan);
-            this.groupBox2.Controls.Add(this.txtAdress);
-            this.groupBox2.Controls.Add(this.datetime);
-            this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(12, 31);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(362, 196);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 126);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtNameMan
-            // 
-            this.txtNameMan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNameMan.Font = new System.Drawing.Font("Viner Hand ITC", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameMan.Location = new System.Drawing.Point(7, 31);
-            this.txtNameMan.Name = "txtNameMan";
-            this.txtNameMan.Size = new System.Drawing.Size(349, 64);
-            this.txtNameMan.TabIndex = 15;
-            this.txtNameMan.Text = "CAFE X";
-            this.txtNameMan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtAdress
-            // 
-            this.txtAdress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAdress.Font = new System.Drawing.Font("Ink Free", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdress.Location = new System.Drawing.Point(38, 106);
-            this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(311, 49);
-            this.txtAdress.TabIndex = 14;
-            this.txtAdress.Text = "Địa chỉ: số 49 đường Ông Ích Khiêm, Quận Hải Châu, Đà Nẵng";
-            this.txtAdress.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // datetime
-            // 
-            this.datetime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.datetime.Enabled = false;
-            this.datetime.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.datetime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datetime.Location = new System.Drawing.Point(12, 158);
-            this.datetime.Name = "datetime";
-            this.datetime.Size = new System.Drawing.Size(122, 25);
-            this.datetime.TabIndex = 13;
             // 
             // cmnSubTable
             // 
@@ -919,11 +787,184 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // pnlFood
+            // 
+            this.pnlFood.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlFood.AutoScroll = true;
+            this.pnlFood.Location = new System.Drawing.Point(7, 81);
+            this.pnlFood.Name = "pnlFood";
+            this.pnlFood.Size = new System.Drawing.Size(10, 0);
+            this.pnlFood.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(342, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "VNĐ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 54);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Đơn giá:";
+            // 
+            // txtNameFood
+            // 
+            this.txtNameFood.Location = new System.Drawing.Point(7, 30);
+            this.txtNameFood.Name = "txtNameFood";
+            this.txtNameFood.Size = new System.Drawing.Size(388, 24);
+            this.txtNameFood.TabIndex = 15;
+            // 
+            // txtPriceFood
+            // 
+            this.txtPriceFood.Location = new System.Drawing.Point(115, 54);
+            this.txtPriceFood.Name = "txtPriceFood";
+            this.txtPriceFood.Size = new System.Drawing.Size(221, 24);
+            this.txtPriceFood.TabIndex = 16;
+            // 
+            // gpbFood
+            // 
+            this.gpbFood.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gpbFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gpbFood.Controls.Add(this.txtPriceFood);
+            this.gpbFood.Controls.Add(this.txtNameFood);
+            this.gpbFood.Controls.Add(this.label4);
+            this.gpbFood.Controls.Add(this.label3);
+            this.gpbFood.Controls.Add(this.pnlFood);
+            this.gpbFood.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbFood.ForeColor = System.Drawing.Color.Black;
+            this.gpbFood.Location = new System.Drawing.Point(786, 376);
+            this.gpbFood.Name = "gpbFood";
+            this.gpbFood.Size = new System.Drawing.Size(23, 26);
+            this.gpbFood.TabIndex = 4;
+            this.gpbFood.TabStop = false;
+            this.gpbFood.Text = "Danh sách món";
+            this.gpbFood.Visible = false;
+            // 
+            // pnlCategory
+            // 
+            this.pnlCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlCategory.AutoScroll = true;
+            this.pnlCategory.Location = new System.Drawing.Point(7, 28);
+            this.pnlCategory.Name = "pnlCategory";
+            this.pnlCategory.Size = new System.Drawing.Size(10, 0);
+            this.pnlCategory.TabIndex = 0;
+            // 
+            // gpbCategory
+            // 
+            this.gpbCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gpbCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gpbCategory.Controls.Add(this.pnlCategory);
+            this.gpbCategory.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbCategory.ForeColor = System.Drawing.Color.Black;
+            this.gpbCategory.Location = new System.Drawing.Point(786, 249);
+            this.gpbCategory.Name = "gpbCategory";
+            this.gpbCategory.Size = new System.Drawing.Size(23, 24);
+            this.gpbCategory.TabIndex = 3;
+            this.gpbCategory.TabStop = false;
+            this.gpbCategory.Text = "Danh mục";
+            this.gpbCategory.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.txtNameMan);
+            this.groupBox2.Controls.Add(this.txtAdress);
+            this.groupBox2.Controls.Add(this.datetime);
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
+            this.groupBox2.Location = new System.Drawing.Point(815, 239);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(362, 331);
+            this.groupBox2.TabIndex = 47;
+            this.groupBox2.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Viner Hand ITC", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.label12.Location = new System.Drawing.Point(5, 218);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(349, 64);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "Chỉ Bán Vì Đam Mê";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 98);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtNameMan
+            // 
+            this.txtNameMan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNameMan.BackColor = System.Drawing.Color.Transparent;
+            this.txtNameMan.Font = new System.Drawing.Font("Viner Hand ITC", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameMan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.txtNameMan.Location = new System.Drawing.Point(7, 31);
+            this.txtNameMan.Name = "txtNameMan";
+            this.txtNameMan.Size = new System.Drawing.Size(349, 64);
+            this.txtNameMan.TabIndex = 15;
+            this.txtNameMan.Text = "Cà phê Ê";
+            this.txtNameMan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtAdress
+            // 
+            this.txtAdress.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAdress.BackColor = System.Drawing.Color.Transparent;
+            this.txtAdress.Font = new System.Drawing.Font("Ink Free", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdress.ForeColor = System.Drawing.Color.Black;
+            this.txtAdress.Location = new System.Drawing.Point(43, 75);
+            this.txtAdress.Name = "txtAdress";
+            this.txtAdress.Size = new System.Drawing.Size(311, 48);
+            this.txtAdress.TabIndex = 14;
+            this.txtAdress.Text = "Làng Cẩm Nê-Hòa Tiến-Hòa Vang_Đà Nẵng";
+            this.txtAdress.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // datetime
+            // 
+            this.datetime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.datetime.Enabled = false;
+            this.datetime.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.datetime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.datetime.Location = new System.Drawing.Point(14, 164);
+            this.datetime.Name = "datetime";
+            this.datetime.Size = new System.Drawing.Size(305, 30);
+            this.datetime.TabIndex = 13;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1199, 598);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -947,18 +988,17 @@
             this.gpbTable.ResumeLayout(false);
             this.gpbBill.ResumeLayout(false);
             this.gpbBill.PerformLayout();
-            this.gpbCategory.ResumeLayout(false);
-            this.gpbFood.ResumeLayout(false);
-            this.gpbFood.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.cmnSubTable.ResumeLayout(false);
             this.cmnSubTable2.ResumeLayout(false);
             this.cmnSubTable3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aCCOUNTBindingSource)).EndInit();
+            this.gpbFood.ResumeLayout(false);
+            this.gpbFood.PerformLayout();
+            this.gpbCategory.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -984,10 +1024,6 @@
         private System.Windows.Forms.GroupBox gpbBill;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.GroupBox gpbCategory;
-        private System.Windows.Forms.Panel pnlCategory;
-        private System.Windows.Forms.GroupBox gpbFood;
-        private System.Windows.Forms.Panel pnlFood;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem tmiAdmin;
         private System.Windows.Forms.ToolStripMenuItem tmiCategory;
@@ -997,8 +1033,6 @@
         private System.Windows.Forms.ToolStripMenuItem tmiTable;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripMenuItem tmiAccount;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnBlock;
@@ -1017,15 +1051,8 @@
         public System.Windows.Forms.Panel pnlBill;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker datetime;
-        private System.Windows.Forms.Label txtAdress;
-        private System.Windows.Forms.Label txtNameMan;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label txtNameTable;
         private System.Windows.Forms.Label txtSTT;
-        private System.Windows.Forms.Label txtNameFood;
-        private System.Windows.Forms.Label txtPriceFood;
         private System.Windows.Forms.ContextMenuStrip cmnSubTable;
         private System.Windows.Forms.ToolStripMenuItem tsmTraMon;
         private System.Windows.Forms.ToolStripMenuItem tsmThanhToan;
@@ -1041,8 +1068,24 @@
         private System.Windows.Forms.ToolStripMenuItem tsmInTT;
         private System.Windows.Forms.Label txtTotal;
         private System.Windows.Forms.OpenFileDialog ofdMedia;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ToolStripMenuItem tmi_NhanVien;
+        private System.Windows.Forms.ToolStripMenuItem danhSáchNhânViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tmi_Report;
+        private System.Windows.Forms.Panel pnlFood;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label txtNameFood;
+        private System.Windows.Forms.Label txtPriceFood;
+        private System.Windows.Forms.GroupBox gpbFood;
+        private System.Windows.Forms.Panel pnlCategory;
+        private System.Windows.Forms.GroupBox gpbCategory;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label txtNameMan;
+        private System.Windows.Forms.Label txtAdress;
+        private System.Windows.Forms.DateTimePicker datetime;
 
         public System.Windows.Forms.MouseEventHandler txtNameMan_MouseClick { get; set; }
     }

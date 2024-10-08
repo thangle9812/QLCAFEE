@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace project
     {
         string name;
         string type;
+        DataProvider Provider=new DataProvider();
         public frmLogin()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace project
                 {
                     name = table.Rows[i][1].ToString();
                     type = table.Rows[i][3].ToString();
-                    MessageBox.Show("Xin chào "+name+" :)", "Đăng nhập thành công",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Xin chào "+name+" :)", "Đăng nhập thành công",MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
             }
@@ -48,6 +50,8 @@ namespace project
         //Su kien click btnLogin
         private void btnLogin_Click(object sender, EventArgs e)
         {
+     
+            
             try
             {
                 string user = txtUsername.Text;
@@ -66,7 +70,10 @@ namespace project
                 }
                 else
                 {
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu", "Lỗi...",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu - Hãy thử Tài khoản: admin - Mật khẩu: admin", "Lỗi...",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    txtUsername.Text ="admin";
+                    txtPassword.Text ="admin";
+                    rdbAdmin.Checked=true;
                 }
             }
             catch

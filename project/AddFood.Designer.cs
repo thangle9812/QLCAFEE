@@ -45,7 +45,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.txtSTT);
             this.groupBox1.Controls.Add(this.txtBan);
             this.groupBox1.Controls.Add(this.btnAdd);
@@ -71,7 +71,8 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.White;
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BackgroundImage = global::project.Properties.Resources.add;
             resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.Name = "btnAdd";
@@ -132,7 +133,7 @@
             this.AcceptButton = this.btnAdd;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;

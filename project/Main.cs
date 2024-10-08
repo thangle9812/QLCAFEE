@@ -34,6 +34,8 @@ namespace project
             {
                 lblName.ForeColor = ColorTranslator.FromHtml("red");
                 tmiAdmin.Visible = true;
+                tmi_NhanVien.Visible = true;
+                tmi_Report.Visible = true;
             }
         }
 
@@ -599,6 +601,17 @@ namespace project
         //     Media
         string [] filenames, filepaths;
 
+        private void danhSáchNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frm_NhanVien frm = new frm_NhanVien();
+                frm.ShowDialog();
+                this.Show();
+                
+            }
+            catch { }
+        }
 
         private void pnlTable_Paint(object sender, PaintEventArgs e)
         {

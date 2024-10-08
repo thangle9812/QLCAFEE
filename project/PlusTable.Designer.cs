@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlusTable));
-            this.btnAccept = new System.Windows.Forms.Button();
             this.groupBoxA = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,29 +43,17 @@
             this.dgvTableB = new System.Windows.Forms.DataGridView();
             this.cbbTableB = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnAccept = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBoxA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTableA)).BeginInit();
             this.groupBoxB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTableB)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnAccept
-            // 
-            this.btnAccept.BackColor = System.Drawing.Color.White;
-            this.btnAccept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAccept.BackgroundImage")));
-            this.btnAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAccept.FlatAppearance.BorderSize = 0;
-            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccept.Location = new System.Drawing.Point(417, 138);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(82, 75);
-            this.btnAccept.TabIndex = 14;
-            this.btnAccept.UseVisualStyleBackColor = false;
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
-            // 
             // groupBoxA
             // 
-            this.groupBoxA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.groupBoxA.BackColor = System.Drawing.Color.Transparent;
             this.groupBoxA.Controls.Add(this.label4);
             this.groupBoxA.Controls.Add(this.label3);
             this.groupBoxA.Controls.Add(this.txtTotalA);
@@ -116,7 +103,7 @@
             // dgvTableA
             // 
             this.dgvTableA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTableA.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvTableA.BackgroundColor = System.Drawing.Color.White;
             this.dgvTableA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTableA.Location = new System.Drawing.Point(23, 126);
             this.dgvTableA.Name = "dgvTableA";
@@ -157,7 +144,7 @@
             this.groupBoxB.Controls.Add(this.cbbTableB);
             this.groupBoxB.Controls.Add(this.label6);
             this.groupBoxB.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxB.Location = new System.Drawing.Point(505, 12);
+            this.groupBoxB.Location = new System.Drawing.Point(619, 18);
             this.groupBoxB.Name = "groupBoxB";
             this.groupBoxB.Size = new System.Drawing.Size(403, 442);
             this.groupBoxB.TabIndex = 25;
@@ -230,13 +217,40 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Từ bàn:";
             // 
+            // btnAccept
+            // 
+            this.btnAccept.BackColor = System.Drawing.Color.White;
+            this.btnAccept.BackgroundImage = global::project.Properties.Resources.next;
+            this.btnAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAccept.FlatAppearance.BorderSize = 0;
+            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccept.Location = new System.Drawing.Point(467, 201);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(82, 75);
+            this.btnAccept.TabIndex = 14;
+            this.btnAccept.UseVisualStyleBackColor = false;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(452, 175);
+            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 23);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Chuyển đến";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // PlusTable
             // 
             this.AcceptButton = this.btnAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(926, 472);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1034, 472);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBoxB);
             this.Controls.Add(this.groupBoxA);
             this.Controls.Add(this.btnAccept);
@@ -258,6 +272,7 @@
             this.groupBoxB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTableB)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -278,5 +293,6 @@
         private System.Windows.Forms.DataGridView dgvTableB;
         private System.Windows.Forms.ComboBox cbbTableB;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

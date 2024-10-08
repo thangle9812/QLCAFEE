@@ -5,21 +5,134 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace project
 {
     public class DataProvider
     {
 
-        SqlConnection connection = new SqlConnection();
+        public SqlConnection connection = new SqlConnection();
         public DataProvider()
         {
+            //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Db_Coffee.mdf;Integrated Security=True"
             try
             {
-                connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\app.net\WinForm\Nhom1_SE464_SE\DoAn\project\QL_QUANCAFE.mdf;Integrated Security=True";
+                connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\QL_QUANCAFE.mdf;Integrated Security=True";
                 connection.Open();
             }
             catch { }
+        }
+        
+        public DataTable LoadDL(string sql)
+        {
+            DataTable data = new DataTable();
+
+            using (SqlCommand command = new SqlCommand())
+            {
+                command.Connection = connection; // Đảm bảo rằng connection đã được khởi tạo
+                command.CommandType = CommandType.Text; // Sử dụng CommandType.Text cho truy vấn SQL thông thường
+                command.CommandText = sql;
+
+                // Mở kết nối trước khi thực hiện truy vấn
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open(); // Mở kết nối
+                }
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(data);
+            } // Kết nối sẽ tự động đóng khi thoát khỏi khối using
+
+            return data;
+        }
+        public async Task<SqlDataReader> LayDl(string sql)
+        {
+            using (SqlCommand command = new SqlCommand())
+            {
+                command.Connection = connection; // Đảm bảo rằng connection đã được khởi tạo
+                command.CommandType = CommandType.Text; // Sử dụng CommandType.Text cho truy vấn SQL thông thường
+                command.CommandText = sql;
+
+                // Mở kết nối trước khi thực hiện truy vấn
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open(); 
+                }
+               
+                SqlDataReader data = await command.ExecuteReaderAsync();
+               
+                return data;
+
+            }   
+        }
+        public int ThemXoaSua(string sql)
+        {
+            using (SqlCommand command = new SqlCommand())
+            {
+                command.Connection = connection; // Đảm bảo rằng connection đã được khởi tạo
+                command.CommandType = CommandType.Text; // Sử dụng CommandType.Text cho truy vấn SQL thông thường
+                command.CommandText = sql;
+
+                // Mở kết nối trước khi thực hiện truy vấn
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                int data =  command.ExecuteNonQuery();
+
+                return data;
+
+            }
+          
+        }
+        public int XoaNhanVien(string sql, params SqlParameter[] parameters)
+        {
+            // Kiểm tra và khởi tạo kết nối nếu cần thiết
+            if (connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+            }
+
+            using (SqlCommand comm = new SqlCommand(sql, connection))
+            {
+                // Thêm tham số nếu có
+                if (parameters != null)
+                {
+                    comm.Parameters.AddRange(parameters);
+                }
+
+                // Thực hiện truy vấn và trả về kết quả
+                int kq = comm.ExecuteNonQuery();
+
+                // Đóng kết nối sau khi thực hiện xong
+                connection.Close();
+                return kq;
+            }
+        }
+        public int AddEmployee(string sql, string hoTen, string sdt, string email, string gioiTinh, DateTime ngayThue, string luong)
+        {
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                // Thêm tham số vào câu lệnh SQL
+                command.Parameters.AddWithValue("@FullName", hoTen);
+                command.Parameters.AddWithValue("@Phone", sdt);
+                command.Parameters.AddWithValue("@Email", email);
+                command.Parameters.AddWithValue("@Sex", gioiTinh);
+                command.Parameters.AddWithValue("@HireDate", ngayThue);
+                command.Parameters.AddWithValue("@Salary", luong);
+
+                // Mở kết nối và thực thi lệnh
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                int result = command.ExecuteNonQuery();
+                connection.Close();
+                return result;
+            }
         }
         public DataTable loadAccount()
         {
@@ -111,7 +224,7 @@ namespace project
             return data;
         }
 
-
+      
         public void Datban(string stt, string nameT)
         {
             SqlCommand command = new SqlCommand();
