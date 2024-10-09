@@ -67,7 +67,7 @@
             this.datetime_NgayThue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datetime_NgayThue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datetime_NgayThue.Location = new System.Drawing.Point(743, 125);
-            this.datetime_NgayThue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.datetime_NgayThue.Margin = new System.Windows.Forms.Padding(4);
             this.datetime_NgayThue.Name = "datetime_NgayThue";
             this.datetime_NgayThue.Size = new System.Drawing.Size(205, 30);
             this.datetime_NgayThue.TabIndex = 33;
@@ -79,7 +79,7 @@
             this.panel1.Controls.Add(this.rdo_Nam);
             this.panel1.Controls.Add(this.rdo_Nu);
             this.panel1.Location = new System.Drawing.Point(596, 193);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(352, 150);
             this.panel1.TabIndex = 31;
@@ -100,7 +100,7 @@
             this.rdo_Khac.AutoSize = true;
             this.rdo_Khac.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdo_Khac.Location = new System.Drawing.Point(182, 118);
-            this.rdo_Khac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdo_Khac.Margin = new System.Windows.Forms.Padding(4);
             this.rdo_Khac.Name = "rdo_Khac";
             this.rdo_Khac.Size = new System.Drawing.Size(68, 24);
             this.rdo_Khac.TabIndex = 23;
@@ -113,7 +113,7 @@
             this.rdo_Nam.AutoSize = true;
             this.rdo_Nam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdo_Nam.Location = new System.Drawing.Point(182, 12);
-            this.rdo_Nam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdo_Nam.Margin = new System.Windows.Forms.Padding(4);
             this.rdo_Nam.Name = "rdo_Nam";
             this.rdo_Nam.Size = new System.Drawing.Size(65, 24);
             this.rdo_Nam.TabIndex = 21;
@@ -126,7 +126,7 @@
             this.rdo_Nu.AutoSize = true;
             this.rdo_Nu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdo_Nu.Location = new System.Drawing.Point(182, 65);
-            this.rdo_Nu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdo_Nu.Margin = new System.Windows.Forms.Padding(4);
             this.rdo_Nu.Name = "rdo_Nu";
             this.rdo_Nu.Size = new System.Drawing.Size(51, 24);
             this.rdo_Nu.TabIndex = 22;
@@ -137,7 +137,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumBlue;
             this.label1.Location = new System.Drawing.Point(389, 27);
@@ -150,7 +150,7 @@
             // txt_HoTen
             // 
             this.txt_HoTen.Location = new System.Drawing.Point(170, 125);
-            this.txt_HoTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_HoTen.Margin = new System.Windows.Forms.Padding(4);
             this.txt_HoTen.Name = "txt_HoTen";
             this.txt_HoTen.Size = new System.Drawing.Size(324, 28);
             this.txt_HoTen.TabIndex = 36;
@@ -237,6 +237,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1043, 515);
             this.Controls.Add(this.txtLuong);
             this.Controls.Add(this.btnAdd);
@@ -252,7 +253,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_SuaNhanVien";
             this.Text = "frm_SuaNhanVien";
             this.panel1.ResumeLayout(false);

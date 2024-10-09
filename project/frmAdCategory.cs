@@ -104,5 +104,10 @@ namespace project
                 MessageBox.Show("Không thể chỉnh sửa danh mục này!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

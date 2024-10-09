@@ -79,7 +79,7 @@
             this.btnAdd.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(86, 125);
+            this.btnAdd.Location = new System.Drawing.Point(279, 150);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(153, 42);
@@ -93,7 +93,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(388, 125);
+            this.btnDelete.Location = new System.Drawing.Point(521, 150);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(153, 42);
@@ -107,7 +107,7 @@
             this.btn_Reload.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btn_Reload.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Reload.ForeColor = System.Drawing.Color.Black;
-            this.btn_Reload.Location = new System.Drawing.Point(670, 125);
+            this.btn_Reload.Location = new System.Drawing.Point(753, 150);
             this.btn_Reload.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Reload.Name = "btn_Reload";
             this.btn_Reload.Size = new System.Drawing.Size(201, 42);
@@ -130,6 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1178, 548);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Reload);

@@ -252,6 +252,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>QL_QUANCAFE.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\checkedicon.jpg" />
     <None Include="Resources\next.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\bin.png" />

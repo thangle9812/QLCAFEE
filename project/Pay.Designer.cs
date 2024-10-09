@@ -33,13 +33,13 @@
             this.txtTotal = new System.Windows.Forms.Label();
             this.txtSTT = new System.Windows.Forms.Label();
             this.txtNameTable = new System.Windows.Forms.Label();
-            this.btnPay = new System.Windows.Forms.Button();
-            this.btnHuy = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlBill = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.gpbBill.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             // 
             this.gpbBill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gpbBill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.gpbBill.BackColor = System.Drawing.Color.White;
             this.gpbBill.Controls.Add(this.txtTotal);
             this.gpbBill.Controls.Add(this.txtSTT);
             this.gpbBill.Controls.Add(this.txtNameTable);
@@ -58,7 +58,7 @@
             this.gpbBill.Controls.Add(this.pnlBill);
             this.gpbBill.Controls.Add(this.label2);
             this.gpbBill.Controls.Add(this.label1);
-            this.gpbBill.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.gpbBill.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gpbBill.Location = new System.Drawing.Point(12, 12);
             this.gpbBill.Name = "gpbBill";
             this.gpbBill.Size = new System.Drawing.Size(460, 477);
@@ -87,34 +87,6 @@
             this.txtNameTable.Size = new System.Drawing.Size(141, 24);
             this.txtNameTable.TabIndex = 17;
             // 
-            // btnPay
-            // 
-            this.btnPay.BackColor = System.Drawing.Color.White;
-            this.btnPay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPay.BackgroundImage")));
-            this.btnPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPay.FlatAppearance.BorderSize = 0;
-            this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnPay.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnPay.Location = new System.Drawing.Point(331, 425);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(55, 46);
-            this.btnPay.TabIndex = 15;
-            this.btnPay.UseVisualStyleBackColor = false;
-            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.BackColor = System.Drawing.Color.White;
-            this.btnHuy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnHuy.BackgroundImage")));
-            this.btnHuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Location = new System.Drawing.Point(392, 425);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(54, 46);
-            this.btnHuy.TabIndex = 16;
-            this.btnHuy.UseVisualStyleBackColor = false;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -122,7 +94,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(399, 395);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 24);
+            this.label6.Size = new System.Drawing.Size(48, 22);
             this.label6.TabIndex = 14;
             this.label6.Text = "VNĐ";
             // 
@@ -132,7 +104,7 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(443, 21);
+            this.label5.Size = new System.Drawing.Size(437, 20);
             this.label5.TabIndex = 10;
             this.label5.Text = "STT                            Món                               Số lượng";
             // 
@@ -154,7 +126,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(11, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 21);
+            this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Số bàn:";
             // 
@@ -165,16 +137,44 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(7, 395);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 21);
+            this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tổng cộng:";
+            // 
+            // btnPay
+            // 
+            this.btnPay.BackColor = System.Drawing.Color.White;
+            this.btnPay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPay.BackgroundImage")));
+            this.btnPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPay.FlatAppearance.BorderSize = 0;
+            this.btnPay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPay.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnPay.Location = new System.Drawing.Point(331, 425);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(55, 46);
+            this.btnPay.TabIndex = 15;
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.BackColor = System.Drawing.Color.White;
+            this.btnHuy.BackgroundImage = global::project.Properties.Resources.bin;
+            this.btnHuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Location = new System.Drawing.Point(392, 425);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(54, 46);
+            this.btnHuy.TabIndex = 16;
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // frmPay
             // 
             this.AcceptButton = this.btnPay;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(484, 501);
             this.Controls.Add(this.gpbBill);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));

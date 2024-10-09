@@ -137,5 +137,10 @@ namespace project
             DataProvider provider = new DataProvider();
             provider.setTotal(txtBan.Text, float.Parse(total.ToString()));
         }
+
+        private void cbbFood_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

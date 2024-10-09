@@ -43,8 +43,8 @@
             this.dgvTableB = new System.Windows.Forms.DataGridView();
             this.cbbTableB = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnAccept = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnAccept = new System.Windows.Forms.Button();
             this.groupBoxA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTableA)).BeginInit();
             this.groupBoxB.SuspendLayout();
@@ -114,7 +114,7 @@
             // 
             // cbbTableA
             // 
-            this.cbbTableA.BackColor = System.Drawing.Color.Silver;
+            this.cbbTableA.BackColor = System.Drawing.Color.White;
             this.cbbTableA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTableA.FormattingEnabled = true;
             this.cbbTableA.Location = new System.Drawing.Point(163, 36);
@@ -136,7 +136,7 @@
             // 
             // groupBoxB
             // 
-            this.groupBoxB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.groupBoxB.BackColor = System.Drawing.Color.White;
             this.groupBoxB.Controls.Add(this.label2);
             this.groupBoxB.Controls.Add(this.label5);
             this.groupBoxB.Controls.Add(this.txtTotalB);
@@ -197,7 +197,7 @@
             // 
             // cbbTableB
             // 
-            this.cbbTableB.BackColor = System.Drawing.Color.Silver;
+            this.cbbTableB.BackColor = System.Drawing.Color.White;
             this.cbbTableB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTableB.FormattingEnabled = true;
             this.cbbTableB.Location = new System.Drawing.Point(163, 36);
@@ -217,6 +217,18 @@
             this.label6.TabIndex = 20;
             this.label6.Text = "Từ bàn:";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.Location = new System.Drawing.Point(452, 175);
+            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(109, 23);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Chuyển đến";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // btnAccept
             // 
             this.btnAccept.BackColor = System.Drawing.Color.White;
@@ -230,18 +242,6 @@
             this.btnAccept.TabIndex = 14;
             this.btnAccept.UseVisualStyleBackColor = false;
             this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(452, 175);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 23);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Chuyển đến";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // PlusTable
             // 

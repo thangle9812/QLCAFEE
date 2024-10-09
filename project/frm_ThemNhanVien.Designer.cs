@@ -50,9 +50,11 @@
             // 
             // txtLuong
             // 
+            this.txtLuong.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtLuong.Location = new System.Drawing.Point(216, 305);
             this.txtLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtLuong.Name = "txtLuong";
+            this.txtLuong.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtLuong.Size = new System.Drawing.Size(324, 22);
             this.txtLuong.TabIndex = 58;
             // 
@@ -73,64 +75,79 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label7.Location = new System.Drawing.Point(117, 305);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 16);
+            this.label7.Size = new System.Drawing.Size(67, 25);
             this.label7.TabIndex = 56;
             this.label7.Text = "Lương";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(117, 234);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 16);
+            this.label6.Size = new System.Drawing.Size(53, 25);
             this.label6.TabIndex = 55;
             this.label6.Text = "SĐT";
             // 
             // txt_SDT
             // 
-            this.txt_SDT.Location = new System.Drawing.Point(216, 227);
+            this.txt_SDT.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txt_SDT.Location = new System.Drawing.Point(216, 234);
             this.txt_SDT.Margin = new System.Windows.Forms.Padding(4);
             this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txt_SDT.Size = new System.Drawing.Size(324, 22);
             this.txt_SDT.TabIndex = 54;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(117, 170);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 16);
+            this.label5.Size = new System.Drawing.Size(60, 25);
             this.label5.TabIndex = 53;
             this.label5.Text = "Email";
             // 
             // txt_DiaChi
             // 
-            this.txt_DiaChi.Location = new System.Drawing.Point(216, 163);
+            this.txt_DiaChi.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txt_DiaChi.Location = new System.Drawing.Point(216, 175);
             this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txt_DiaChi.Name = "txt_DiaChi";
+            this.txt_DiaChi.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txt_DiaChi.Size = new System.Drawing.Size(324, 22);
             this.txt_DiaChi.TabIndex = 52;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label4.Location = new System.Drawing.Point(117, 114);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 16);
+            this.label4.Size = new System.Drawing.Size(77, 25);
             this.label4.TabIndex = 51;
             this.label4.Text = "Họ Tên";
             // 
             // txt_HoTen
             // 
-            this.txt_HoTen.Location = new System.Drawing.Point(216, 107);
+            this.txt_HoTen.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txt_HoTen.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txt_HoTen.Location = new System.Drawing.Point(216, 115);
             this.txt_HoTen.Margin = new System.Windows.Forms.Padding(4);
             this.txt_HoTen.Name = "txt_HoTen";
+            this.txt_HoTen.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txt_HoTen.Size = new System.Drawing.Size(324, 22);
             this.txt_HoTen.TabIndex = 50;
             // 
@@ -160,6 +177,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.rdo_Khac);
             this.panel1.Controls.Add(this.rdo_Nam);
@@ -224,12 +242,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumBlue;
             this.label1.Location = new System.Drawing.Point(435, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(332, 46);
+            this.label1.Size = new System.Drawing.Size(334, 48);
             this.label1.TabIndex = 46;
             this.label1.Text = "Thêm Nhân Viên";
             // 
@@ -237,6 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1155, 529);
             this.Controls.Add(this.txtLuong);
             this.Controls.Add(this.btnAdd);

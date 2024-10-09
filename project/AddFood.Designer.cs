@@ -32,13 +32,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSTT = new System.Windows.Forms.Label();
             this.txtBan = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.lbl1 = new System.Windows.Forms.Label();
             this.cbbCount = new System.Windows.Forms.NumericUpDown();
             this.lblCount = new System.Windows.Forms.Label();
             this.cbbFood = new System.Windows.Forms.ComboBox();
             this.lblMon = new System.Windows.Forms.Label();
             this.lblTable = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbCount)).BeginInit();
             this.SuspendLayout();
@@ -47,8 +47,8 @@
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.txtSTT);
-            this.groupBox1.Controls.Add(this.txtBan);
             this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Controls.Add(this.txtBan);
             this.groupBox1.Controls.Add(this.lbl1);
             this.groupBox1.Controls.Add(this.cbbCount);
             this.groupBox1.Controls.Add(this.lblCount);
@@ -68,16 +68,6 @@
             // 
             resources.ApplyResources(this.txtBan, "txtBan");
             this.txtBan.Name = "txtBan";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.BackgroundImage = global::project.Properties.Resources.add;
-            resources.ApplyResources(this.btnAdd, "btnAdd");
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lbl1
             // 
@@ -117,6 +107,7 @@
             this.cbbFood.FormattingEnabled = true;
             resources.ApplyResources(this.cbbFood, "cbbFood");
             this.cbbFood.Name = "cbbFood";
+            this.cbbFood.SelectedIndexChanged += new System.EventHandler(this.cbbFood_SelectedIndexChanged);
             // 
             // lblMon
             // 
@@ -127,6 +118,15 @@
             // 
             resources.ApplyResources(this.lblTable, "lblTable");
             this.lblTable.Name = "lblTable";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.btnAdd, "btnAdd");
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmAddFood
             // 
@@ -157,8 +157,8 @@
         public System.Windows.Forms.ComboBox cbbFood;
         private System.Windows.Forms.Label lblMon;
         private System.Windows.Forms.Label lblTable;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label txtSTT;
         private System.Windows.Forms.Label txtBan;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

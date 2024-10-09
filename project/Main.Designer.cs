@@ -53,32 +53,24 @@
             this.tmiAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.tmi_NhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSáchNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tmi_Report = new System.Windows.Forms.ToolStripMenuItem();
             this.gpbTable = new System.Windows.Forms.GroupBox();
             this.pnlTable = new System.Windows.Forms.Panel();
             this.gpbBill = new System.Windows.Forms.GroupBox();
             this.txtTotal = new System.Windows.Forms.Label();
             this.txtSTT = new System.Windows.Forms.Label();
             this.txtNameTable = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlBill = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnPay = new System.Windows.Forms.Button();
-            this.btnBlock = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnReturn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnReplaceTable = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnPlusTable = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnAddFood = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.cmnSubTable = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -95,7 +87,6 @@
             this.tsmMoBan = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdMedia = new System.Windows.Forms.OpenFileDialog();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.aCCOUNTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pnlFood = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -106,10 +97,18 @@
             this.gpbCategory = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtNameMan = new System.Windows.Forms.Label();
             this.txtAdress = new System.Windows.Forms.Label();
             this.datetime = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnPay = new System.Windows.Forms.Button();
+            this.btnBlock = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnReplaceTable = new System.Windows.Forms.Button();
+            this.btnPlusTable = new System.Windows.Forms.Button();
+            this.btnAddFood = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.aCCOUNTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.gpbTable.SuspendLayout();
             this.gpbBill.SuspendLayout();
@@ -117,11 +116,11 @@
             this.cmnSubTable.SuspendLayout();
             this.cmnSubTable2.SuspendLayout();
             this.cmnSubTable3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aCCOUNTBindingSource)).BeginInit();
             this.gpbFood.SuspendLayout();
             this.gpbCategory.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCCOUNTBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -131,8 +130,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tmiAcount,
             this.tmiAdmin,
-            this.tmi_NhanVien,
-            this.tmi_Report});
+            this.tmi_NhanVien});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -312,13 +310,6 @@
             this.danhSáchNhânViênToolStripMenuItem.Text = "Danh Sách Nhân Viên";
             this.danhSáchNhânViênToolStripMenuItem.Click += new System.EventHandler(this.danhSáchNhânViênToolStripMenuItem_Click);
             // 
-            // tmi_Report
-            // 
-            this.tmi_Report.Name = "tmi_Report";
-            this.tmi_Report.Size = new System.Drawing.Size(68, 24);
-            this.tmi_Report.Text = "Report";
-            this.tmi_Report.Visible = false;
-            // 
             // gpbTable
             // 
             this.gpbTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -372,6 +363,7 @@
             this.gpbBill.TabIndex = 2;
             this.gpbBill.TabStop = false;
             this.gpbBill.Text = "Hóa đơn";
+            this.gpbBill.Enter += new System.EventHandler(this.gpbBill_Enter);
             // 
             // txtTotal
             // 
@@ -397,20 +389,6 @@
             this.txtNameTable.Name = "txtNameTable";
             this.txtNameTable.Size = new System.Drawing.Size(160, 27);
             this.txtNameTable.TabIndex = 16;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.BackColor = System.Drawing.Color.White;
-            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPrint.Location = new System.Drawing.Point(331, 24);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(33, 33);
-            this.btnPrint.TabIndex = 15;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // label6
             // 
@@ -487,38 +465,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // btnPay
-            // 
-            this.btnPay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnPay.BackgroundImage = global::project.Properties.Resources.nillicon;
-            this.btnPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnPay.Location = new System.Drawing.Point(532, 89);
-            this.btnPay.Margin = new System.Windows.Forms.Padding(5);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(54, 49);
-            this.btnPay.TabIndex = 45;
-            this.btnPay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPay.UseVisualStyleBackColor = false;
-            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
-            // 
-            // btnBlock
-            // 
-            this.btnBlock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnBlock.BackColor = System.Drawing.Color.White;
-            this.btnBlock.BackgroundImage = global::project.Properties.Resources.employeeicon;
-            this.btnBlock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBlock.Location = new System.Drawing.Point(658, 89);
-            this.btnBlock.Margin = new System.Windows.Forms.Padding(5);
-            this.btnBlock.Name = "btnBlock";
-            this.btnBlock.Size = new System.Drawing.Size(54, 50);
-            this.btnBlock.TabIndex = 44;
-            this.btnBlock.UseVisualStyleBackColor = false;
-            this.btnBlock.Click += new System.EventHandler(this.btnBlock_Click);
-            // 
             // lblName
             // 
             this.lblName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -532,21 +478,6 @@
             this.lblName.Text = "Account";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnReturn
-            // 
-            this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnReturn.BackgroundImage = global::project.Properties.Resources.reporticon;
-            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReturn.Location = new System.Drawing.Point(162, 89);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(5);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(55, 49);
-            this.btnReturn.TabIndex = 42;
-            this.btnReturn.UseVisualStyleBackColor = false;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
-            // 
             // label11
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -559,23 +490,6 @@
             this.label11.TabIndex = 41;
             this.label11.Text = "Gộp bàn";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnReplaceTable
-            // 
-            this.btnReplaceTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnReplaceTable.BackColor = System.Drawing.Color.White;
-            this.btnReplaceTable.BackgroundImage = global::project.Properties.Resources.table;
-            this.btnReplaceTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReplaceTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnReplaceTable.Location = new System.Drawing.Point(284, 89);
-            this.btnReplaceTable.Margin = new System.Windows.Forms.Padding(5);
-            this.btnReplaceTable.Name = "btnReplaceTable";
-            this.btnReplaceTable.Size = new System.Drawing.Size(54, 50);
-            this.btnReplaceTable.TabIndex = 35;
-            this.btnReplaceTable.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnReplaceTable.UseVisualStyleBackColor = false;
-            this.btnReplaceTable.Click += new System.EventHandler(this.btnReplaceTable_Click);
             // 
             // label10
             // 
@@ -603,21 +517,6 @@
             this.label9.Text = "Thanh toán";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnPlusTable
-            // 
-            this.btnPlusTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPlusTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnPlusTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPlusTable.BackgroundImage")));
-            this.btnPlusTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPlusTable.Location = new System.Drawing.Point(411, 89);
-            this.btnPlusTable.Margin = new System.Windows.Forms.Padding(5);
-            this.btnPlusTable.Name = "btnPlusTable";
-            this.btnPlusTable.Size = new System.Drawing.Size(55, 50);
-            this.btnPlusTable.TabIndex = 36;
-            this.btnPlusTable.UseVisualStyleBackColor = false;
-            this.btnPlusTable.Click += new System.EventHandler(this.btnPlusTable_Click);
-            // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -643,21 +542,6 @@
             this.label7.TabIndex = 37;
             this.label7.Text = "Đặt bàn";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnAddFood
-            // 
-            this.btnAddFood.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAddFood.BackgroundImage = global::project.Properties.Resources.addcf;
-            this.btnAddFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddFood.Location = new System.Drawing.Point(47, 88);
-            this.btnAddFood.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(54, 50);
-            this.btnAddFood.TabIndex = 33;
-            this.btnAddFood.UseVisualStyleBackColor = false;
-            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // printDialog1
             // 
@@ -907,19 +791,6 @@
             this.label12.Text = "Chỉ Bán Vì Đam Mê";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 98);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // txtNameMan
             // 
             this.txtNameMan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -960,6 +831,127 @@
             this.datetime.Size = new System.Drawing.Size(305, 30);
             this.datetime.TabIndex = 13;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 98);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnPay
+            // 
+            this.btnPay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnPay.BackgroundImage = global::project.Properties.Resources.nillicon;
+            this.btnPay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnPay.Location = new System.Drawing.Point(532, 89);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(5);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.Size = new System.Drawing.Size(54, 49);
+            this.btnPay.TabIndex = 45;
+            this.btnPay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPay.UseVisualStyleBackColor = false;
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // btnBlock
+            // 
+            this.btnBlock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnBlock.BackColor = System.Drawing.Color.White;
+            this.btnBlock.BackgroundImage = global::project.Properties.Resources.employeeicon;
+            this.btnBlock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBlock.Location = new System.Drawing.Point(658, 89);
+            this.btnBlock.Margin = new System.Windows.Forms.Padding(5);
+            this.btnBlock.Name = "btnBlock";
+            this.btnBlock.Size = new System.Drawing.Size(54, 50);
+            this.btnBlock.TabIndex = 44;
+            this.btnBlock.UseVisualStyleBackColor = false;
+            this.btnBlock.Click += new System.EventHandler(this.btnBlock_Click);
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnReturn.BackgroundImage = global::project.Properties.Resources.reporticon;
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReturn.Location = new System.Drawing.Point(162, 89);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(5);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(55, 49);
+            this.btnReturn.TabIndex = 42;
+            this.btnReturn.UseVisualStyleBackColor = false;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnReplaceTable
+            // 
+            this.btnReplaceTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnReplaceTable.BackColor = System.Drawing.Color.White;
+            this.btnReplaceTable.BackgroundImage = global::project.Properties.Resources.table;
+            this.btnReplaceTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReplaceTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnReplaceTable.Location = new System.Drawing.Point(284, 89);
+            this.btnReplaceTable.Margin = new System.Windows.Forms.Padding(5);
+            this.btnReplaceTable.Name = "btnReplaceTable";
+            this.btnReplaceTable.Size = new System.Drawing.Size(54, 50);
+            this.btnReplaceTable.TabIndex = 35;
+            this.btnReplaceTable.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnReplaceTable.UseVisualStyleBackColor = false;
+            this.btnReplaceTable.Click += new System.EventHandler(this.btnReplaceTable_Click);
+            // 
+            // btnPlusTable
+            // 
+            this.btnPlusTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPlusTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnPlusTable.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPlusTable.BackgroundImage")));
+            this.btnPlusTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPlusTable.Location = new System.Drawing.Point(411, 89);
+            this.btnPlusTable.Margin = new System.Windows.Forms.Padding(5);
+            this.btnPlusTable.Name = "btnPlusTable";
+            this.btnPlusTable.Size = new System.Drawing.Size(55, 50);
+            this.btnPlusTable.TabIndex = 36;
+            this.btnPlusTable.UseVisualStyleBackColor = false;
+            this.btnPlusTable.Click += new System.EventHandler(this.btnPlusTable_Click);
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddFood.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAddFood.BackgroundImage = global::project.Properties.Resources.addcf;
+            this.btnAddFood.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddFood.Location = new System.Drawing.Point(47, 88);
+            this.btnAddFood.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(54, 50);
+            this.btnAddFood.TabIndex = 33;
+            this.btnAddFood.UseVisualStyleBackColor = false;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackColor = System.Drawing.Color.White;
+            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPrint.Location = new System.Drawing.Point(331, 24);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(33, 33);
+            this.btnPrint.TabIndex = 15;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -992,13 +984,13 @@
             this.cmnSubTable.ResumeLayout(false);
             this.cmnSubTable2.ResumeLayout(false);
             this.cmnSubTable3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aCCOUNTBindingSource)).EndInit();
             this.gpbFood.ResumeLayout(false);
             this.gpbFood.PerformLayout();
             this.gpbCategory.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCCOUNTBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1071,7 +1063,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolStripMenuItem tmi_NhanVien;
         private System.Windows.Forms.ToolStripMenuItem danhSáchNhânViênToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tmi_Report;
         private System.Windows.Forms.Panel pnlFood;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

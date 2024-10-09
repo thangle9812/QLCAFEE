@@ -613,6 +613,11 @@ namespace project
             catch { }
         }
 
+        private void gpbBill_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void pnlTable_Paint(object sender, PaintEventArgs e)
         {
 

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReFood));
             this.groupBoxA = new System.Windows.Forms.GroupBox();
-            this.btnAccept = new System.Windows.Forms.Button();
             this.cbbCountReF = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.cbbCount = new System.Windows.Forms.NumericUpDown();
@@ -42,6 +41,7 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.cbbTable = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAccept = new System.Windows.Forms.Button();
             this.groupBoxA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbCountReF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbCount)).BeginInit();
@@ -49,7 +49,7 @@
             // 
             // groupBoxA
             // 
-            this.groupBoxA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.groupBoxA.BackColor = System.Drawing.Color.White;
             this.groupBoxA.Controls.Add(this.btnAccept);
             this.groupBoxA.Controls.Add(this.cbbCountReF);
             this.groupBoxA.Controls.Add(this.label6);
@@ -62,34 +62,19 @@
             this.groupBoxA.Controls.Add(this.txtTotal);
             this.groupBoxA.Controls.Add(this.cbbTable);
             this.groupBoxA.Controls.Add(this.label1);
-            this.groupBoxA.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBoxA.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBoxA.Location = new System.Drawing.Point(12, 12);
             this.groupBoxA.Name = "groupBoxA";
-            this.groupBoxA.Size = new System.Drawing.Size(434, 248);
+            this.groupBoxA.Size = new System.Drawing.Size(804, 401);
             this.groupBoxA.TabIndex = 25;
             this.groupBoxA.TabStop = false;
-            this.groupBoxA.Text = "Đổi trả:";
-            // 
-            // btnAccept
-            // 
-            this.btnAccept.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnAccept.BackColor = System.Drawing.Color.White;
-            this.btnAccept.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAccept.BackgroundImage")));
-            this.btnAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAccept.FlatAppearance.BorderSize = 0;
-            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccept.Location = new System.Drawing.Point(333, 162);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(59, 51);
-            this.btnAccept.TabIndex = 26;
-            this.btnAccept.UseVisualStyleBackColor = false;
-            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
+            this.groupBoxA.Text = "Đổi Trả";
             // 
             // cbbCountReF
             // 
             this.cbbCountReF.BackColor = System.Drawing.Color.White;
-            this.cbbCountReF.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbbCountReF.Location = new System.Drawing.Point(124, 187);
+            this.cbbCountReF.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbCountReF.Location = new System.Drawing.Point(324, 280);
             this.cbbCountReF.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -101,7 +86,7 @@
             0,
             0});
             this.cbbCountReF.Name = "cbbCountReF";
-            this.cbbCountReF.Size = new System.Drawing.Size(174, 30);
+            this.cbbCountReF.Size = new System.Drawing.Size(174, 34);
             this.cbbCountReF.TabIndex = 31;
             this.cbbCountReF.Value = new decimal(new int[] {
             1,
@@ -112,24 +97,24 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(50, 189);
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.Location = new System.Drawing.Point(182, 283);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 22);
+            this.label6.Size = new System.Drawing.Size(77, 26);
             this.label6.TabIndex = 30;
             this.label6.Text = "Trả lại:";
             // 
             // cbbCount
             // 
             this.cbbCount.BackColor = System.Drawing.Color.White;
-            this.cbbCount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbCount.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbbCount.Increment = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.cbbCount.Location = new System.Drawing.Point(124, 153);
+            this.cbbCount.Location = new System.Drawing.Point(324, 230);
             this.cbbCount.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -141,7 +126,7 @@
             0,
             0});
             this.cbbCount.Name = "cbbCount";
-            this.cbbCount.Size = new System.Drawing.Size(174, 30);
+            this.cbbCount.Size = new System.Drawing.Size(174, 34);
             this.cbbCount.TabIndex = 29;
             this.cbbCount.Value = new decimal(new int[] {
             1,
@@ -152,11 +137,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(25, 155);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Location = new System.Drawing.Point(182, 232);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 22);
+            this.label5.Size = new System.Drawing.Size(102, 26);
             this.label5.TabIndex = 28;
             this.label5.Text = "Số lượng:";
             // 
@@ -165,20 +150,20 @@
             this.cbbFood.BackColor = System.Drawing.Color.Silver;
             this.cbbFood.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbFood.FormattingEnabled = true;
-            this.cbbFood.Location = new System.Drawing.Point(124, 119);
+            this.cbbFood.Location = new System.Drawing.Point(324, 179);
             this.cbbFood.Name = "cbbFood";
-            this.cbbFood.Size = new System.Drawing.Size(288, 33);
+            this.cbbFood.Size = new System.Drawing.Size(241, 39);
             this.cbbFood.TabIndex = 27;
             this.cbbFood.TextChanged += new System.EventHandler(this.cbbFood_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(38, 122);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(182, 182);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 22);
+            this.label2.Size = new System.Drawing.Size(91, 26);
             this.label2.TabIndex = 26;
             this.label2.Text = "Món trả:";
             // 
@@ -186,7 +171,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(359, 82);
+            this.label4.Location = new System.Drawing.Point(573, 142);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 23);
@@ -196,11 +181,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(42, 82);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(182, 132);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 22);
+            this.label3.Size = new System.Drawing.Size(67, 26);
             this.label3.TabIndex = 24;
             this.label3.Text = "Tổng:";
             // 
@@ -208,9 +193,9 @@
             // 
             this.txtTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotal.Location = new System.Drawing.Point(110, 82);
+            this.txtTotal.Location = new System.Drawing.Point(324, 135);
             this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(241, 27);
+            this.txtTotal.Size = new System.Drawing.Size(241, 32);
             this.txtTotal.TabIndex = 23;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -219,30 +204,45 @@
             this.cbbTable.BackColor = System.Drawing.Color.Silver;
             this.cbbTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTable.FormattingEnabled = true;
-            this.cbbTable.Location = new System.Drawing.Point(110, 36);
+            this.cbbTable.Location = new System.Drawing.Point(324, 83);
             this.cbbTable.Name = "cbbTable";
-            this.cbbTable.Size = new System.Drawing.Size(302, 33);
+            this.cbbTable.Size = new System.Drawing.Size(241, 39);
             this.cbbTable.TabIndex = 21;
             this.cbbTable.TextChanged += new System.EventHandler(this.cbbTable_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(27, 39);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(182, 83);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 22);
+            this.label1.Size = new System.Drawing.Size(83, 26);
             this.label1.TabIndex = 20;
             this.label1.Text = "Số bàn:";
+            // 
+            // btnAccept
+            // 
+            this.btnAccept.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnAccept.BackColor = System.Drawing.Color.Transparent;
+            this.btnAccept.BackgroundImage = global::project.Properties.Resources.checkedicon;
+            this.btnAccept.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAccept.FlatAppearance.BorderSize = 0;
+            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccept.Location = new System.Drawing.Point(739, 344);
+            this.btnAccept.Name = "btnAccept";
+            this.btnAccept.Size = new System.Drawing.Size(59, 51);
+            this.btnAccept.TabIndex = 26;
+            this.btnAccept.UseVisualStyleBackColor = false;
+            this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
             // 
             // ReFood
             // 
             this.AcceptButton = this.btnAccept;
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(459, 279);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(828, 425);
             this.Controls.Add(this.groupBoxA);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
