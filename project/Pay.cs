@@ -72,6 +72,7 @@ namespace project
             if (ms == DialogResult.Yes)
             {
                 //Tih tien
+                SaveBill();
                 setTableNull();
                 deleteBill();
                 MessageBox.Show("Đã thanh toán " + txtNameTable.Text, "Xong",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -80,6 +81,20 @@ namespace project
             else if (ms == DialogResult.No)
             {
                 this.Close();
+            }
+        }
+        private void SaveBill()
+        {
+            try
+            {
+
+                DataProvider provider = new DataProvider();
+                provider.ExecuteProcedure("sp_save_bill");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra khi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

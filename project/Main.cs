@@ -35,7 +35,7 @@ namespace project
                 lblName.ForeColor = ColorTranslator.FromHtml("red");
                 tmiAdmin.Visible = true;
                 tmi_NhanVien.Visible = true;
-                tmi_Report.Visible = true;
+                //tmi_Report.Visible = true;
             }
         }
 
@@ -618,9 +618,35 @@ namespace project
 
         }
 
-        private void pnlTable_Paint(object sender, PaintEventArgs e)
+        private void reportToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["frm_BaoCao"] == null)
+            {
+                frm_BaoCao frm = new frm_BaoCao();
+                frm.Show();
+            }
+            else
+            {
+                Application.OpenForms["frm_BaoCao"].Activate();
+            }
+        }
+
+        private void pnlTable_Paint(object sender, PaintEventArgs e)
+        {
+            //if (Application.OpenForms["frm_BaoCao"] == null)
+            //{
+            //    frm_BaoCao frm = new frm_BaoCao();
+            //    frm.Show();
+            //}
+            //else
+            //{
+            //    Application.OpenForms["frm_BaoCao"].Activate();
+            //}
         }
 
     }

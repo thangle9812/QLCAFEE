@@ -18,12 +18,34 @@ namespace project
             //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Db_Coffee.mdf;Integrated Security=True"
             try
             {
-                connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\QL_QUANCAFE.mdf;Integrated Security=True";
+                connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""G:\1.DOANNET_LUURIENG_Dua_Phong\DOANNET_ANHBOY - ThemBang\DoAnDOTNET\project\QL_QUANCAFE.mdf"";Integrated Security=True";
                 connection.Open();
             }
             catch { }
         }
-        
+        public DataTable loadData1(String sql)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(sql, connection);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            return dt;
+        }
+        public void ExecuteProcedure(string procName)
+        {
+            using (SqlCommand command = new SqlCommand(procName, connection))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+
+                // Mở kết nối nếu chưa mở
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                // Thực thi stored procedure
+                command.ExecuteNonQuery();
+            }
+        }
         public DataTable LoadDL(string sql)
         {
             DataTable data = new DataTable();
