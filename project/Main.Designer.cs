@@ -43,7 +43,6 @@
             this.tmiSleep = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tmiLogout = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tmiAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.tmiCategory = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
@@ -54,6 +53,7 @@
             this.tmiAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.tmi_NhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.danhSáchNhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gpbTable = new System.Windows.Forms.GroupBox();
             this.pnlTable = new System.Windows.Forms.Panel();
             this.gpbBill = new System.Windows.Forms.GroupBox();
@@ -110,7 +110,6 @@
             this.txtAdress = new System.Windows.Forms.Label();
             this.datetime = new System.Windows.Forms.DateTimePicker();
             this.aCCOUNTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.báoCáoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.gpbTable.SuspendLayout();
             this.gpbBill.SuspendLayout();
@@ -151,8 +150,7 @@
             this.toolStripSeparator3,
             this.tmiSleep,
             this.toolStripSeparator4,
-            this.tmiLogout,
-            this.reportToolStripMenuItem});
+            this.tmiLogout});
             this.tmiAcount.Name = "tmiAcount";
             this.tmiAcount.Size = new System.Drawing.Size(85, 24);
             this.tmiAcount.Text = "Tài khoản";
@@ -235,13 +233,6 @@
             this.tmiLogout.Text = "Đăng xuất";
             this.tmiLogout.Click += new System.EventHandler(this.tmiLogout_Click);
             // 
-            // reportToolStripMenuItem
-            // 
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(304, 26);
-            this.reportToolStripMenuItem.Text = "Báo cáo";
-            this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
-            // 
             // tmiAdmin
             // 
             this.tmiAdmin.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -320,6 +311,13 @@
             this.danhSáchNhânViênToolStripMenuItem.Size = new System.Drawing.Size(287, 26);
             this.danhSáchNhânViênToolStripMenuItem.Text = "Danh Sách Nhân Viên";
             this.danhSáchNhânViênToolStripMenuItem.Click += new System.EventHandler(this.danhSáchNhânViênToolStripMenuItem_Click);
+            // 
+            // báoCáoToolStripMenuItem
+            // 
+            this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
+            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
+            this.báoCáoToolStripMenuItem.Text = "Báo Cáo";
+            this.báoCáoToolStripMenuItem.Click += new System.EventHandler(this.báoCáoToolStripMenuItem_Click);
             // 
             // gpbTable
             // 
@@ -963,13 +961,6 @@
             this.datetime.Size = new System.Drawing.Size(305, 30);
             this.datetime.TabIndex = 13;
             // 
-            // báoCáoToolStripMenuItem
-            // 
-            this.báoCáoToolStripMenuItem.Name = "báoCáoToolStripMenuItem";
-            this.báoCáoToolStripMenuItem.Size = new System.Drawing.Size(79, 24);
-            this.báoCáoToolStripMenuItem.Text = "Báo Cáo";
-            this.báoCáoToolStripMenuItem.Click += new System.EventHandler(this.báoCáoToolStripMenuItem_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -1095,7 +1086,6 @@
         private System.Windows.Forms.Label txtNameMan;
         private System.Windows.Forms.Label txtAdress;
         private System.Windows.Forms.DateTimePicker datetime;
-        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem báoCáoToolStripMenuItem;
 
         public System.Windows.Forms.MouseEventHandler txtNameMan_MouseClick { get; set; }

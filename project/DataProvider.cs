@@ -18,7 +18,7 @@ namespace project
             //@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Db_Coffee.mdf;Integrated Security=True"
             try
             {
-                connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""G:\1.DOANNET_LUURIENG_Dua_Phong\DOANNET_ANHBOY - ThemBang\DoAnDOTNET\project\QL_QUANCAFE.mdf"";Integrated Security=True";
+                connection.ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""D:\APP .NET\DoAnDOTNET\project\QL_QUANCAFE.mdf"";Integrated Security=True";
                 connection.Open();
             }
             catch { }

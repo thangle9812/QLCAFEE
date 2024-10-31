@@ -61,19 +61,27 @@ namespace project
                 {
                     type = "ADMIN";
                 }
-                if (CheckLogin(user, pass, type) == true)
+
+                if ( txtUsername.Text == "" || txtPassword.Text == "")
                 {
-                    frmMain main = new frmMain(user, name, pass, type);
-                    this.Hide();
-                    main.ShowDialog();
-                    this.Show();
+                    MessageBox.Show("Vui long nhap day du thong tin","Canh bao");
                 }
                 else
                 {
-                    MessageBox.Show("Sai tài khoản hoặc mật khẩu - Hãy thử Tài khoản: admin - Mật khẩu: admin", "Lỗi...",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    txtUsername.Text ="admin";
-                    txtPassword.Text ="admin";
-                    rdbAdmin.Checked=true;
+                    if (CheckLogin(user, pass, type) == true)
+                    {
+                        frmMain main = new frmMain(user, name, pass, type);
+                        this.Hide();
+                        main.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai tài khoản hoặc mật khẩu ", "Lỗi...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        /*   txtUsername.Text = "admin";
+                           txtPassword.Text = "admin";
+                           rdbAdmin.Checked = true;*/
+                    }
                 }
             }
             catch
