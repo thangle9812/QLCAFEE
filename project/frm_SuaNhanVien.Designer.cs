@@ -39,12 +39,12 @@
             this.txt_HoTen = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_DiaChi = new System.Windows.Forms.TextBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_SDT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtLuong = new System.Windows.Forms.TextBox();
+            this.txt_Luong = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,13 +175,13 @@
             this.label5.TabIndex = 39;
             this.label5.Text = "Email";
             // 
-            // txt_DiaChi
+            // txt_Email
             // 
-            this.txt_DiaChi.Location = new System.Drawing.Point(170, 181);
-            this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_DiaChi.Name = "txt_DiaChi";
-            this.txt_DiaChi.Size = new System.Drawing.Size(324, 28);
-            this.txt_DiaChi.TabIndex = 38;
+            this.txt_Email.Location = new System.Drawing.Point(170, 181);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.Size = new System.Drawing.Size(324, 28);
+            this.txt_Email.TabIndex = 38;
             // 
             // label6
             // 
@@ -225,13 +225,13 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // txtLuong
+            // txt_Luong
             // 
-            this.txtLuong.Location = new System.Drawing.Point(170, 323);
-            this.txtLuong.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLuong.Name = "txtLuong";
-            this.txtLuong.Size = new System.Drawing.Size(324, 28);
-            this.txtLuong.TabIndex = 45;
+            this.txt_Luong.Location = new System.Drawing.Point(170, 323);
+            this.txt_Luong.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Luong.Name = "txt_Luong";
+            this.txt_Luong.Size = new System.Drawing.Size(324, 28);
+            this.txt_Luong.TabIndex = 45;
             // 
             // frm_SuaNhanVien
             // 
@@ -239,13 +239,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1043, 515);
-            this.Controls.Add(this.txtLuong);
+            this.Controls.Add(this.txt_Luong);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_SDT);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txt_DiaChi);
+            this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_HoTen);
             this.Controls.Add(this.label3);
@@ -276,11 +276,11 @@
         private System.Windows.Forms.TextBox txt_HoTen;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_DiaChi;
+        private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_SDT;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtLuong;
+        private System.Windows.Forms.TextBox txt_Luong;
     }
 }

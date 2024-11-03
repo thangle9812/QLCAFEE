@@ -148,12 +148,12 @@ namespace project
 
                 if (result.Rows.Count == 0)
                 {
-                    MessageBox.Show("Không tìm thấy nhân viên với thông tin đã nhập.");
+                    MessageBox.Show("Không tìm thấy nhân viên với thông tin đã nhập");
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm.");
+                MessageBox.Show("Vui lòng nhập từ khóa tìm kiếm");
             }
         }
 

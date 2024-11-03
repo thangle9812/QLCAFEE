@@ -325,18 +325,14 @@ namespace project
         {
             try
             {
-                if (txtSTT.Text == "ONLINE")
-                {
-                    frmAddFood addF = new frmAddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
-                    addF.ShowDialog();
-                    this.Show();
-                    loaddataTable();
-                    loaddataBill();
-                }
-                else if (txtSTT.Text == "DATTRUOC")
-                {
-                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                 if (txtSTT.Text == "ONLINE")
+ {
+     MessageBox.Show("Bàn này đang được đặt! Vui lòng chọn bàn khác", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+ }
+ else if (txtSTT.Text == "DATTRUOC")
+ {
+     MessageBox.Show("Bàn này đã được đặt trước! Không thể đặt bàn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+ }
                 else if (txtSTT.Text == "TRONG")
                 {
                     DialogResult ms = MessageBox.Show("Bàn này đang trống. Mở bàn nhé?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -482,15 +478,37 @@ namespace project
         {
             try
             {
-                printDialog1.Document = printDocument1;
-                if (printDialog1.ShowDialog() == DialogResult.OK)
+                // Check if the table is empty
+                if (txtSTT.Text == "TRONG")
                 {
-                    printDocument1.Print();
+                    MessageBox.Show("Bàn này đang rỗng chưa có hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Exit the method if the table is empty
                 }
+                if (txtSTT.Text == "DATTRUOC")
+                {
+                    MessageBox.Show("Bàn này đang đặt trước chưa có hóa đơn!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Exit the method if the table is empty
+                }
+
+                if (txtSTT.Text == "ONLINE")
+                {
+                    DialogResult confirmation = MessageBox.Show("Bàn này có hóa đơn. Bạn có muốn in hóa đơn mẫu không?",
+                 "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (confirmation == DialogResult.Yes)
+                    {
+                        // Proceed to print sample invoice
+                        printDialog1.Document = printDocument1; // Assuming you want to print the same document
+                        if (printDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            printDocument1.Print(); // Print the invoice
+                        }
+                    }
+                    }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Không thể in hóa đơn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Không thể in hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         //PrintDocument
@@ -539,7 +557,34 @@ namespace project
         //menu context SubTable
         private void tsmThemMon_Click(object sender, EventArgs e)
         {
-            AddFood();
+            try
+            {
+                if (txtSTT.Text == "ONLINE")
+                {
+                    frmAddFood addF = new frmAddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
+                    addF.ShowDialog();
+                    this.Show();
+                    loaddataTable();
+                    loaddataBill();
+                }
+                else if (txtSTT.Text == "DATTRUOC")
+                {
+                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (txtSTT.Text == "TRONG")
+                {
+                    DialogResult ms = MessageBox.Show("Bàn này đang trống. Mở bàn nhé?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (ms == DialogResult.Yes)
+                    {
+                        frmAddFood addF = new frmAddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
+                        addF.ShowDialog();
+                        this.Show();
+                        loaddataTable();
+                        loaddataBill();
+                    }
+                }
+            }
+            catch { }
         }
         private void tsmTraMon_Click(object sender, EventArgs e)
         {
