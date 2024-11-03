@@ -40,15 +40,15 @@
             // 
             // data_GridView_Employees
             // 
-            this.data_GridView_Employees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.data_GridView_Employees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.data_GridView_Employees.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.data_GridView_Employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_GridView_Employees.Location = new System.Drawing.Point(4, 216);
+            this.data_GridView_Employees.Location = new System.Drawing.Point(42, 215);
             this.data_GridView_Employees.Margin = new System.Windows.Forms.Padding(4);
             this.data_GridView_Employees.Name = "data_GridView_Employees";
             this.data_GridView_Employees.RowHeadersWidth = 51;
             this.data_GridView_Employees.RowTemplate.Height = 24;
-            this.data_GridView_Employees.Size = new System.Drawing.Size(1161, 320);
+            this.data_GridView_Employees.Size = new System.Drawing.Size(1216, 317);
             this.data_GridView_Employees.TabIndex = 1;
             // 
             // txt_Search
@@ -131,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1178, 548);
+            this.ClientSize = new System.Drawing.Size(1293, 557);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Reload);
             this.Controls.Add(this.btnDelete);

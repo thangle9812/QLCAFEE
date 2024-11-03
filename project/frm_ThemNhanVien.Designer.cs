@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtLuong = new System.Windows.Forms.TextBox();
+            this.txt_Luong = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_SDT = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_DiaChi = new System.Windows.Forms.TextBox();
+            this.txt_Email = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_HoTen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,15 +48,15 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtLuong
+            // txt_Luong
             // 
-            this.txtLuong.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtLuong.Location = new System.Drawing.Point(216, 305);
-            this.txtLuong.Margin = new System.Windows.Forms.Padding(4);
-            this.txtLuong.Name = "txtLuong";
-            this.txtLuong.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txtLuong.Size = new System.Drawing.Size(324, 22);
-            this.txtLuong.TabIndex = 58;
+            this.txt_Luong.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txt_Luong.Location = new System.Drawing.Point(216, 305);
+            this.txt_Luong.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Luong.Name = "txt_Luong";
+            this.txt_Luong.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txt_Luong.Size = new System.Drawing.Size(324, 22);
+            this.txt_Luong.TabIndex = 58;
             // 
             // btnAdd
             // 
@@ -118,15 +118,15 @@
             this.label5.TabIndex = 53;
             this.label5.Text = "Email";
             // 
-            // txt_DiaChi
+            // txt_Email
             // 
-            this.txt_DiaChi.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txt_DiaChi.Location = new System.Drawing.Point(216, 175);
-            this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_DiaChi.Name = "txt_DiaChi";
-            this.txt_DiaChi.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.txt_DiaChi.Size = new System.Drawing.Size(324, 22);
-            this.txt_DiaChi.TabIndex = 52;
+            this.txt_Email.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txt_Email.Location = new System.Drawing.Point(216, 175);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_Email.Name = "txt_Email";
+            this.txt_Email.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txt_Email.Size = new System.Drawing.Size(324, 22);
+            this.txt_Email.TabIndex = 52;
             // 
             // label4
             // 
@@ -174,6 +174,7 @@
             this.datetime_NgayThue.Name = "datetime_NgayThue";
             this.datetime_NgayThue.Size = new System.Drawing.Size(205, 30);
             this.datetime_NgayThue.TabIndex = 48;
+            this.datetime_NgayThue.ValueChanged += new System.EventHandler(this.datetime_NgayThue_ValueChanged);
             // 
             // panel1
             // 
@@ -258,13 +259,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1155, 529);
-            this.Controls.Add(this.txtLuong);
+            this.Controls.Add(this.txt_Luong);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_SDT);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txt_DiaChi);
+            this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_HoTen);
             this.Controls.Add(this.label3);
@@ -273,6 +274,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frm_ThemNhanVien";
             this.Text = "frm_ThemNhanVien";
+            this.Load += new System.EventHandler(this.frm_ThemNhanVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -282,13 +284,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtLuong;
+        private System.Windows.Forms.TextBox txt_Luong;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_SDT;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_DiaChi;
+        private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_HoTen;
         private System.Windows.Forms.Label label3;

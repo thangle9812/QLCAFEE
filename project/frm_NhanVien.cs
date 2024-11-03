@@ -29,6 +29,7 @@ namespace project
             // Đặt DataSource cho DataGridView
             data_GridView_Employees.DataSource = result;
 
+
             if (result.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu nhân viên.");
@@ -137,7 +138,7 @@ namespace project
                 {
                     // Nếu không phải số, tìm kiếm trong tất cả các trường
                     // Giả sử cột tên đầy đủ là FullName
-                    sql = "SELECT * FROM Employees WHERE FullName LIKE '%" + searchTerm + "%' OR Position LIKE '%" + searchTerm + "%'";
+                    sql = "SELECT * FROM Employees WHERE Name LIKE N'%" + searchTerm + "%' OR Sex LIKE N'%" + searchTerm + "%'";
                 }
 
                 var result = provider.LoadDL(sql);
@@ -159,6 +160,8 @@ namespace project
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frm_ThemNhanVien themnv = new frm_ThemNhanVien();
+            themnv.EmployeeAdded += (s, args) => LoadEmployeeTables();
+
             themnv.Show();
         }
 
@@ -178,6 +181,7 @@ namespace project
                 MessageBoxIcon.Warning
             );
 
+
             // Nếu người dùng chọn "Yes", thực hiện xóa
             if (confirmResult == DialogResult.Yes)
             {
@@ -195,7 +199,7 @@ namespace project
                 }
                 else
                 {
-                    MessageBox.Show("Xóa nhân viên thất bại");
+                    MessageBox.Show("Xóa thất bại! Nhân viên không tồn tại để xóa");
                 }
             }
         }
@@ -204,7 +208,6 @@ namespace project
             string sql = "SELECT * FROM Employees";
             var result = provider.LoadDL(sql);
 
-            // Đặt DataSource cho DataGridView
             data_GridView_Employees.DataSource = result;
 
             if (result.Rows.Count == 0)
@@ -212,13 +215,11 @@ namespace project
                 MessageBox.Show("Không có dữ liệu nhân viên.");
             }
 
-            // Kiểm tra xem cột "Sửa" đã tồn tại chưa, nếu có thì loại bỏ trước khi thêm lại
             if (data_GridView_Employees.Columns.Contains("btn_Sua"))
             {
                 data_GridView_Employees.Columns.Remove("btn_Sua");
             }
 
-            // Thêm cột "Sửa" vào DataGridView
             DataGridViewButtonColumn btnEditColumn = new DataGridViewButtonColumn();
             btnEditColumn.HeaderText = "Sửa";
             btnEditColumn.Name = "btn_Sua";
@@ -226,20 +227,12 @@ namespace project
             btnEditColumn.UseColumnTextForButtonValue = true;
             data_GridView_Employees.Columns.Add(btnEditColumn);
 
-            // Cài đặt các thuộc tính cho DataGridView
             data_GridView_Employees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            data_GridView_Employees.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             data_GridView_Employees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            data_GridView_Employees.RowTemplate.Height = 50;
-            data_GridView_Employees.DefaultCellStyle.Font = new Font("Arial", 12);
-            data_GridView_Employees.Size = new Size(1700, 600);
-
-            // Xóa lựa chọn mặc định ban đầu
             data_GridView_Employees.ClearSelection();
 
-            // Đảm bảo sự kiện CellClick chỉ được gán một lần
-            data_GridView_Employees.CellClick -= DataGridView_Employees_CellClick; // Xóa sự kiện trước đó
-            data_GridView_Employees.CellClick += DataGridView_Employees_CellClick; // Gán lại sự kiện
+            data_GridView_Employees.CellClick -= DataGridView_Employees_CellClick;
+            data_GridView_Employees.CellClick += DataGridView_Employees_CellClick;
         }
 
         private async void btn_Reload_Click(object sender, EventArgs e)
