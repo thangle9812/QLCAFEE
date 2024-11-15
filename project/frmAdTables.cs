@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace project
@@ -41,30 +43,45 @@ namespace project
             int t = dgvResult.CurrentCell.RowIndex;
             lblText.Text = dgvResult.Rows[t].Cells[0].Value.ToString();
         }
-
+       
         //Them ban
         private void btnAdd_Click(object sender, EventArgs e)
         {
+
             try
             {
                 string name = txtName.Text;
-                if (name != "")
+                DataProvider provider = new DataProvider();
+
+                if (string.IsNullOrEmpty(name))
                 {
-                    DataProvider provider = new DataProvider();
+                    MessageBox.Show("Tên bàn trống kìa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (name.Length > 10)
+                {
+                    MessageBox.Show("Tên bàn không được quá 10 kí tự!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (!System.Text.RegularExpressions.Regex.IsMatch(name, @"^[\p{L}\p{N}\s]+$"))
+                {
+                    MessageBox.Show("Tên bàn không được chứa kí tự đặc biệt!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else if (provider.IsTableNameExists(name))
+                {
+                    MessageBox.Show("Tên bàn đã tồn tại trong hệ thống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
                     provider.AddTable(name);
                     loadTable();
                     MessageBox.Show("Đã thêm bàn thành công!", "Đã thêm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
-                {
-                    MessageBox.Show("Tên bàn trống kìa!", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                }
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Không thể thêm bàn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         //Xoa ban
         private void btnDelete_Click(object sender, EventArgs e)

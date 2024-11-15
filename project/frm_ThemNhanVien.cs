@@ -13,45 +13,121 @@ namespace project
 {
     public partial class frm_ThemNhanVien : Form
     {
+        public event EventHandler EmployeeAdded;
         DataProvider provider = new DataProvider();
         public frm_ThemNhanVien()
         {
             InitializeComponent();
         }
-        private void btn_Them_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-   
-
-        private bool ValidateInput(string hoTen, string chucVu, string diaChi, string sdt, string gioiTinh)
+        private bool ValidateInput(string hoTen, string email, string luong, string sdt, string gioiTinh)
         {
             if (string.IsNullOrEmpty(hoTen))
             {
-                MessageBox.Show("Họ tên không được để trống.");
+                MessageBox.Show("Họ Tên không được để trống");
                 txt_HoTen.Focus();
                 return false;
             }
-            
-            if (string.IsNullOrEmpty(diaChi))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(hoTen, @"^[\p{L}\s]+$"))
             {
-                MessageBox.Show("Địa chỉ không được để trống.");
-                txt_DiaChi.Focus();
+                MessageBox.Show("Họ tên không được chứa ký tự đặc biệt hoặc số.");
+                txt_HoTen.Focus();
                 return false;
             }
+
+
+            if (string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Email không được để trống");
+                txt_Email.Focus();
+                return false;
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.(vn|com)$"))
+            {
+                MessageBox.Show("Email không hợp lệ");
+                txt_Email.Focus();
+                return false;
+            }
+
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Email không hợp lệ.");
+                txt_Email.Focus();
+                return false;
+            }
+
             if (string.IsNullOrEmpty(sdt))
             {
-                MessageBox.Show("Số điện thoại không được để trống.");
+                MessageBox.Show("Số điện thoại không được để trống");
                 txt_SDT.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(gioiTinh))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(sdt, @"^\d+$"))
             {
-                MessageBox.Show("Vui lòng chọn giới tính.");
+                MessageBox.Show("Số điện thoại chỉ chứa số");
+                txt_SDT.Focus();
                 return false;
             }
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(sdt, @"^0\d{9,10}$"))
+            {
+                MessageBox.Show("SĐT phải bắt đầu bằng số 0 và chứa đúng 10 hoặc 11 số");
+                txt_SDT.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(luong))
+            {
+                MessageBox.Show("Lương không được để trống");
+                txt_Luong.Focus();
+                return false;
+            }
+
+            if (!decimal.TryParse(luong, out decimal salary))
+            {
+                MessageBox.Show("Lương chỉ chứa số");
+                txt_Luong.Focus();
+                return false;
+            }
+
+            if (salary < 0)
+            {
+                MessageBox.Show("Lương phải lớn hơn hoặc bằng 0");
+                txt_Luong.Focus();
+                return false;
+            }
+            if (datetime_NgayThue.CustomFormat == " ")
+            {
+                MessageBox.Show("Ngày thuê không được để trống! Vui lòng chọn ngày thuê");
+                datetime_NgayThue.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(gioiTinh))
+            {
+                MessageBox.Show("Giới tính không được để trống! Vui lòng chọn giới tính");
+                return false;
+            }
+            
+
             return true;
+        }
+        private void ClearDateTimePicker()
+        {
+            datetime_NgayThue.CustomFormat = " ";
+            datetime_NgayThue.Format = DateTimePickerFormat.Custom;
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         private string GetGioiTinh()
@@ -63,25 +139,24 @@ namespace project
         }
 
 
+
         private void ResetForm()
         {
-            txt_HoTen.Clear(); 
-            datetime_NgayThue.Value = DateTime.Now; // Đặt lại ngày thuê về ngày hiện tại
-            txt_DiaChi.Clear();               // Làm sạch trường địa chỉ
-            txt_SDT.Clear();                  // Làm sạch trường số điện thoại
-            txtLuong.Clear();                 // Làm sạch trường lương (nếu có)
-            rdo_Nam.Checked = false;          // Bỏ chọn giới tính Nam
-            rdo_Nu.Checked = false;           // Bỏ chọn giới tính Nữ
-            rdo_Khac.Checked = false;         // Bỏ chọn giới tính Khác
+            txt_HoTen.Clear();
+            datetime_NgayThue.Value = DateTime.Now;
+            txt_Email.Clear();
+            txt_SDT.Clear();
+            txt_Luong.Clear();
+            ResetGenderSelection();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // Lấy dữ liệu từ form
             string hoTen = txt_HoTen.Text.Trim();
-            string email = txt_DiaChi.Text.Trim();
+            string email = txt_Email.Text.Trim();
             DateTime ngayThue = datetime_NgayThue.Value;
-            string luong = txtLuong.Text.Trim();
+            string luong = txt_Luong.Text.Trim();
             string sdt = txt_SDT.Text.Trim();
             string gioiTinh = GetGioiTinh();
 
@@ -98,12 +173,37 @@ namespace project
             if (result >= 1)
             {
                 MessageBox.Show("Thêm nhân viên thành công");
+                EmployeeAdded?.Invoke(this, EventArgs.Empty);
                 ResetForm();
             }
             else
             {
                 MessageBox.Show("Thêm nhân viên thất bại");
             }
+        }
+
+        private void ResetGenderSelection()
+        {
+            // Đảm bảo rằng không có checkbox nào được chọn khi mở form
+            rdo_Nam.Checked = false;
+            rdo_Nu.Checked = false;
+            rdo_Khac.Checked = false;
+        }
+        private void frm_ThemNhanVien_Load(object sender, EventArgs e)
+        {
+            ResetGenderSelection();
+            ClearDateTimePicker();
+            ActiveControl = panel1;
+        }
+
+        private void datetime_NgayThue_ValueChanged(object sender, EventArgs e)
+        {
+            datetime_NgayThue.CustomFormat = "dd/MM/yyyy";
+        }
+
+        private void txt_HoTen_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

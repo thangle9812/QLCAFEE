@@ -44,7 +44,7 @@
             // 
             resources.ApplyResources(this.lblTaiKhoan, "lblTaiKhoan");
             this.lblTaiKhoan.BackColor = System.Drawing.Color.Transparent;
-            this.lblTaiKhoan.ForeColor = System.Drawing.Color.Cyan;
+            this.lblTaiKhoan.ForeColor = System.Drawing.Color.Aqua;
             this.lblTaiKhoan.Name = "lblTaiKhoan";
             // 
             // txtUsername
@@ -63,7 +63,7 @@
             // 
             resources.ApplyResources(this.lblMatKhau, "lblMatKhau");
             this.lblMatKhau.BackColor = System.Drawing.Color.Transparent;
-            this.lblMatKhau.ForeColor = System.Drawing.Color.Cyan;
+            this.lblMatKhau.ForeColor = System.Drawing.Color.Aqua;
             this.lblMatKhau.Name = "lblMatKhau";
             // 
             // btnLogin
@@ -80,7 +80,7 @@
             // 
             resources.ApplyResources(this.rdbAdmin, "rdbAdmin");
             this.rdbAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.rdbAdmin.ForeColor = System.Drawing.Color.Cyan;
+            this.rdbAdmin.ForeColor = System.Drawing.Color.Aqua;
             this.rdbAdmin.Name = "rdbAdmin";
             this.rdbAdmin.UseVisualStyleBackColor = false;
             // 
@@ -89,14 +89,14 @@
             resources.ApplyResources(this.rdbCashier, "rdbCashier");
             this.rdbCashier.BackColor = System.Drawing.Color.Transparent;
             this.rdbCashier.Checked = true;
-            this.rdbCashier.ForeColor = System.Drawing.Color.Cyan;
+            this.rdbCashier.ForeColor = System.Drawing.Color.Aqua;
             this.rdbCashier.Name = "rdbCashier";
             this.rdbCashier.TabStop = true;
             this.rdbCashier.UseVisualStyleBackColor = false;
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnThoat.BackColor = System.Drawing.Color.Pink;
             resources.ApplyResources(this.btnThoat, "btnThoat");
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.FlatAppearance.BorderSize = 0;
@@ -109,7 +109,7 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.Cyan;
+            this.label1.ForeColor = System.Drawing.Color.Aqua;
             this.label1.Name = "label1";
             // 
             // frmLogin

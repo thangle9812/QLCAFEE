@@ -50,46 +50,63 @@ namespace project
         //Su kien click btnLogin
         private void btnLogin_Click(object sender, EventArgs e)
         {
-     
-            
+
             try
             {
-                string user = txtUsername.Text;
-                string pass = txtPassword.Text;
+                string user = txtUsername.Text.Trim();
+                string pass = txtPassword.Text.Trim();
                 string type = "CASHIER";
+
                 if (rdbAdmin.Checked == true)
                 {
                     type = "ADMIN";
                 }
 
-                if ( txtUsername.Text == "" || txtPassword.Text == "")
+                if (string.IsNullOrEmpty(user) && string.IsNullOrEmpty(pass))
                 {
-                    MessageBox.Show("Vui long nhap day du thong tin","Canh bao");
+                    MessageBox.Show("Không được để trống tên tài khoản và mật khẩu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-                else
+
+                if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
                 {
-                    if (CheckLogin(user, pass, type) == true)
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (System.Text.RegularExpressions.Regex.IsMatch(user, @"[^a-zA-Z0-9]"))
+                {
+                    MessageBox.Show("Tên tài khoản không thể chứa ký tự đặc biệt", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (CheckLogin(user, pass, type) == true)
+                {
+                    if (type == "ADMIN")
                     {
-                        frmMain main = new frmMain(user, name, pass, type);
-                        this.Hide();
-                        main.ShowDialog();
-                        this.Show();
+                        MessageBox.Show("Đăng nhập thành công với quyền Admin! Xin chào " + name, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Sai tài khoản hoặc mật khẩu ", "Lỗi...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        /*   txtUsername.Text = "admin";
-                           txtPassword.Text = "admin";
-                           rdbAdmin.Checked = true;*/
+                        MessageBox.Show("Đăng nhập thành công với quyền Thu Ngân! Xin chào " + name, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+
+                    this.Hide();  // Ẩn form đăng nhập tạm thời
+                    frmMain main = new frmMain(user, name, pass, type);
+                    main.Show();  // Mở form `frmMain` ở chế độ không phải modal
+                    main.FormClosed += (s, args) => this.Close(); // Đóng form đăng nhập khi form chính đóng
+                }
+                else
+                {
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu", "Lỗi...", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch
             {
-                //neu chua co co so du lieu
                 MessageBox.Show("Cơ sở dữ liệu không tồn tại. Vui lòng tạo mới theo file hướng dẫn", "Lỗi...", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
     }
 }
