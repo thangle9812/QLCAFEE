@@ -150,6 +150,7 @@
             this.txt_HoTen.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txt_HoTen.Size = new System.Drawing.Size(324, 22);
             this.txt_HoTen.TabIndex = 50;
+            this.txt_HoTen.TextChanged += new System.EventHandler(this.txt_HoTen_TextChanged);
             // 
             // label3
             // 

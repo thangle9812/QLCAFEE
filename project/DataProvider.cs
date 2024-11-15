@@ -23,7 +23,20 @@
                 }
                 catch { }
             }
-            public DataTable loadData1(String sql)
+        public bool IsTableNameExists(string sql)
+        {
+            // Replace with your actual database connection string
+            string query = "SELECT COUNT(*) FROM TABLEF WHERE NAME = @name";
+            using (SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\QLCFPHANH\\QLCAFEE\\project\\QL_QUANCAFE.mdf;Integrated Security=True"))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@name", sql);
+                connection.Open();
+                int count = (int)command.ExecuteScalar();
+                return count > 0; // Return true if the name already exists
+            }
+        }
+        public DataTable loadData1(String sql)
             {
                 SqlDataAdapter da = new SqlDataAdapter(sql, connection);
                 DataTable dt = new DataTable();

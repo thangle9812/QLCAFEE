@@ -200,5 +200,10 @@ namespace project
         {
             datetime_NgayThue.CustomFormat = "dd/MM/yyyy";
         }
+
+        private void txt_HoTen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
